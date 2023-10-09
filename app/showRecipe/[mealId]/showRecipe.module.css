@@ -1,0 +1,122 @@
+.container{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    /* background-color: aqua; */
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    margin: 25px 0 25px;
+    /* border-color: blue;
+    border-style: dotted; */
+}
+.titleContainer{
+    margin-bottom: 25px;
+}
+.title{
+    margin-top: 15px;
+}
+.ingredientsContainer{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-self: center;
+    margin-right: 35px;
+}
+.ingredients{
+
+}
+.ingredientRatingCard{
+width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* border-color: aqua;
+    border-style: dotted; */
+}
+
+.imageContainer{
+    width: 50%;
+    height: 50%;
+    /* border-color: aqua;
+    border-style: dotted; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image{
+    height: 90%;
+    width: 90%;
+    padding: 5px;
+    border-radius: 5px;
+    border-top-color: rgb(220, 225, 223);
+    border-top-style: solid;
+    border-bottom-color: rgb(220, 225, 223);
+    border-bottom-style: double;
+    border-left-style: solid;
+    border-left-color: rgb(220, 225, 223);
+    border-right-style: solid;
+    border-right-color: rgb(220, 225, 223);
+
+
+}
+.calFlagDura{
+    display: flex;
+    flex-direction: row;
+    margin: 15px 0 15px ;
+    width: 50%;
+    padding: 10px;
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items: center;
+    /* border-color: aqua;
+    border-style: dashed; */
+
+}
+.ul{
+    list-style: none;
+    margin-bottom: 10px;
+}
+.li{
+    display: flex;
+    
+    flex-direction: row-reverse;
+    /* margin: 0 10px 0 0; */
+}
+.index{
+    margin-left: 10px;
+    display: flex;
+    min-width: 30px;
+    justify-content: flex-end;
+    /* border-color: aquamarine;
+    border-style: double; */
+}
+.ingItem{
+    /* display: flex; */
+    direction: rtl;
+    text-align: right;
+    padding: 5px 0 5px 0;
+    border-image: url("/border-image.png") 27 / 0 0 5px 0 / 18px 14px 9px 4px
+      round;
+}
+.duration{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.durationItem{
+    direction: rtl;
+    margin: 0 20px 0 20px;
+}
+.ingredientsSteps{
+    display: flex;
+    justify-content: flex-end;
+    margin: 25px 0 25px 0;
+}
+.stepsContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-self: center;
+    margin-right: 35px;
+}

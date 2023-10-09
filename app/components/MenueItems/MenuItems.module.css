@@ -1,0 +1,11 @@
+.btn{
+    background-color: transparent;
+    color: rgb(76, 201, 240);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent{
+    position: relative;
+}

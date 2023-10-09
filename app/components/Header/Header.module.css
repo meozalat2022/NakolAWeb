@@ -1,0 +1,15 @@
+.bannerImage{
+    display: flex;
+    justify-content: flex-end;
+  
+}
+.logo{
+ 
+display: flex;
+justify-content: flex-start;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

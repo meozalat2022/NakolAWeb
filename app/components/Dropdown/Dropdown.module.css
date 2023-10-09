@@ -1,0 +1,25 @@
+.dropdown{
+    position: absolute;
+    right: 0;
+    /* left: 0; */
+    margin-top: 15px;
+    padding: 0;
+    display: none !important;
+    flex-direction: column;
+    /* margin-right: 20px; */
+    min-width: 200px;
+    
+}
+
+.dropdown li{
+    border:1px solid rgb(76, 201, 240) ;
+    /* width: 100%; */
+    display: flex;
+    justify-content: right;
+}
+.showMenuItem{
+    display: block !important;
+}
+.hideMenuItem{
+    display: none !important;
+}

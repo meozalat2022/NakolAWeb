@@ -1,0 +1,57 @@
+export const menueItems = [
+  { id: "hq2hQ0WYeebRvVXdnRgh", title: "دايت", url: "/mealsList" },
+  { id: "0Qcm1H7v9Snpz98Zwwk3", title: "مشروبات", url: "/mealsList" },
+  {
+    title: "حلويات ومخبوزات",
+    sortBy: "deserts",
+    // url: "/sortedMeals",
+    subMenue: [
+      { id: "COszxRjARJTloZcwrgfn", title: "حلويات", url: "/mealsList" },
+      { id: "XgBInPRkghWvQE15YMdo", title: "مخبوزات", url: "/mealsList" },
+    ],
+  },
+  {
+    title: "طرق الطهي",
+    sortBy: "cooking",
+    // url: "/sortedMeals",
+    subMenue: [
+      { id: "ZZX3WfnqmVUoExPorfzS", title: "مشويات", url: "/mealsList" },
+      { id: "ecs6C8ha4tyzV1VLxMNn", title: "شوربات", url: "/mealsList" },
+      { id: "l9hJvD13YoLD1wX5OwvD", title: "فطار او عشاء", url: "/mealsList" },
+      { id: "qjAZ1VEaCtmVDCYTxUoT", title: "سلطات", url: "/mealsList" },
+      { id: "lV9U3eIFPBKpi5oS8mOw", title: "سندوتشات", url: "/mealsList" },
+      { id: "vfiXYXaoRZCj9yquHipa", title: "نباتي", url: "/mealsList" },
+      { id: "prkRnZeDBVJ5S5RJFL2w", title: "صوصات", url: "/mealsList" },
+      { id: "bswiknaTh7dsrFavjWBT", title: "مقبلات", url: "/mealsList" },
+      { id: "PYkRMmhbJwleBQ7m9L1Z", title: "سناكس", url: "/mealsList" },
+    ],
+  },
+  {
+    title: "المكونات",
+    sortBy: "ingredients",
+    // url: "/sortedMeals",
+    subMenue: [
+      { id: "ENyZxhcGdFqU2X3HktCF", title: "لحوم", url: "/mealsList" },
+      { id: "btpBDCR8uut6Jn6U9Bn9", title: "بحريات", url: "/mealsList" },
+      { id: "o1YsyvKbJUz3vTlyIjoH", title: "فراخ ودواجن", url: "/mealsList" },
+    ],
+  },
+  {
+    title: "المطبخ",
+    // url: "/sortedMeals",
+    sortBy: "kitchen",
+    subMenue: [
+      { id: "j0ErklzXhrgHgJp3yN3R", title: "مصري", url: "/mealsList" },
+      { id: "2dQKzEa7LSPXgFyVrkjn", title: "ايطاليانو", url: "/mealsList" },
+      { id: "AmSjdSajPJa3HmEfPwzx", title: "هلا بالخليج", url: "/mealsList" },
+      { id: "FvWwsXNeP5Mo0xLzsYda", title: "مكسيكانو", url: "/mealsList" },
+      { id: "KZEg9C92LStgFop45z35", title: "هندوستاني", url: "/mealsList" },
+      { id: "RtndjQZeBum9smnJ7GPr", title: "صيني", url: "/mealsList" },
+      { id: "ZVSbniKIQHvquikUEN0K", title: "فرنساوي", url: "/mealsList" },
+      { id: "eFzh7O99tRefolKRduuN", title: "ياباني ", url: "/mealsList" },
+      { id: "hb25pSDpegLubwQJV5Dl", title: "امريكاني", url: "/mealsList" },
+      { id: "rWQfQOeHGoO1weF6Sdcp", title: "شامي", url: "/mealsList" },
+    ],
+  },
+];
+// { title: "Home", url: "/", id: "" },

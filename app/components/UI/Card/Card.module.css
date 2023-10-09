@@ -1,0 +1,66 @@
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px 0 5px;
+    /* border-color: brown;
+    border-style: double; */
+    padding: 5px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+.imageContainer{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
+}
+.image{
+    z-index: -1;
+    padding: 5px;
+    /* border-color: rgb(240, 245, 243); */
+    /* border-style: double; */
+    border-radius: 5px;
+    border-top-color: rgb(240, 245, 243);
+    border-top-style: solid;
+    border-bottom-color: rgb(240, 245, 243);
+    border-bottom-style: double;
+    border-left-style: solid;
+    border-left-color: rgb(240, 245, 243);
+    border-right-style: solid;
+    border-right-color: rgb(240, 245, 243);
+
+}
+.title{
+    text-align: center;
+    color: rgb(63, 55, 201);
+}
+.title:hover{
+    text-align: center;
+    color: rgb(63, 55, 201);
+    text-decoration: underline;
+}
+.ingredients{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.list{
+    list-style: none;
+}
+.categoryTitle{
+    color: rgb(76, 201, 240);
+    font-weight: bold;
+}
+.categoryTitle:hover{
+    color: rgb(76, 201, 240);
+    font-weight: bold;
+    text-decoration: underline;
+}
+/* .imageContainer{
+    background-color: aliceblue;
+} */

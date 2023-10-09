@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    /* border-color: black;
+    border-style: dotted; */
+    /* background-color: aqua; */
+    width: 100%;
+    justify-content: center;
+
+}
