@@ -11,7 +11,7 @@ const HomePage = () => {
       </div>
 
       <div className={styles.latestMealsHead}>
-        <h4>احدث الوصفات</h4>
+        <h4 className="bg-success">احدث الوصفات</h4>
       </div>
 
       <div className={styles.latest}>

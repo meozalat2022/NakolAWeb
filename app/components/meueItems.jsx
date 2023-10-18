@@ -3,7 +3,7 @@ export const menueItems = [
   { id: "0Qcm1H7v9Snpz98Zwwk3", title: "مشروبات", url: "/mealsList" },
   {
     title: "حلويات ومخبوزات",
-    sortBy: "deserts",
+    subMen: true,
     // url: "/sortedMeals",
     subMenue: [
       { id: "COszxRjARJTloZcwrgfn", title: "حلويات", url: "/mealsList" },
@@ -12,7 +12,7 @@ export const menueItems = [
   },
   {
     title: "طرق الطهي",
-    sortBy: "cooking",
+    subMen: true,
     // url: "/sortedMeals",
     subMenue: [
       { id: "ZZX3WfnqmVUoExPorfzS", title: "مشويات", url: "/mealsList" },
@@ -28,7 +28,7 @@ export const menueItems = [
   },
   {
     title: "المكونات",
-    sortBy: "ingredients",
+    subMen: true,
     // url: "/sortedMeals",
     subMenue: [
       { id: "ENyZxhcGdFqU2X3HktCF", title: "لحوم", url: "/mealsList" },
@@ -39,7 +39,7 @@ export const menueItems = [
   {
     title: "المطبخ",
     // url: "/sortedMeals",
-    sortBy: "kitchen",
+    subMen: true,
     subMenue: [
       { id: "j0ErklzXhrgHgJp3yN3R", title: "مصري", url: "/mealsList" },
       { id: "2dQKzEa7LSPXgFyVrkjn", title: "ايطاليانو", url: "/mealsList" },

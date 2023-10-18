@@ -5,12 +5,16 @@ const Header = () => {
   return (
     <header>
       <div>
-        <div className={styles.container}>
-          <div className={styles.logo}>
-            <Image src="/logo_.png" width={450} height={100} alt="logo" />
+        <div className="md:justify-around justify-center hidden md:flex items-center">
+          <div>
+            <img src="/logo_.png" className="w-40 h-40" alt="logo" />
           </div>
-          <div className={styles.bannerImage}>
-            <Image src="/banner.png" width={450} height={100} alt="Banner" />
+          <div>
+            <img
+              src="/banner.png"
+              className="w-40 h-40 hidden md:block"
+              alt="Banner"
+            />
           </div>
         </div>
         <NavBar />

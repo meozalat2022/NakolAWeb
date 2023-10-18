@@ -28,6 +28,16 @@
     margin: 0 10px 0 10px;
 }
 
+#navbarScroll{
+    display: none !important;
+}
+.nav-link {
+    color: #638797 !important;
+    /* background-color: #333; Same comment as above.  Unneeded and clips the toggle button when toggled open. */
+    text-align: center; /*Makes text centered in nav when screen sizes are smaller*/
+  }
+
+
 
 
 
