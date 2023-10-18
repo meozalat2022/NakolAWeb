@@ -26,9 +26,9 @@ export default function Home() {
     // dispatch(fetchLatestMeals());
     // dispatch(fetchHealthyMeals());
   }, []);
-
+  //<main>className="min-h-screen flex justify-between p-16"
   return (
-    <main>
+    <main className="w-auto">
       <HomePage />
     </main>
   );

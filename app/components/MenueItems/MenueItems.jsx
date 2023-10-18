@@ -46,29 +46,29 @@ const MenueItems = () => {
   //   </li>
   // );
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-8 ">
+    <div className="flex flex-col-reverse xl:flex-row gap-6 ">
       {menueItems.map((item) => {
         return (
-          <div>
-            <div className="py-0 px-3 inline-block text-left md:cursor-pointer group border md:border-solid border-accent border-y-0 border-r-0">
+          <div className="xl:flex-col justify-center">
+            <div className=" py-0 px-3 inline-block  xl:cursor-pointer group border xl:border-solid border-accent border-y-0 border-r-0 rounded-md w-full text-center bg-accent xs:text-center sm:text-center sm:bg-accent xl:bg-primary">
               <h1
                 onClick={() =>
                   setShowMenu(() =>
                     showMenu !== item.title ? item.title : setShowMenu("")
                   )
                 }
-                className="text-base text-accent mx-4 py-2 "
+                className="text-base xl:text-accent text-primary px-2   "
               >
                 {item.title}
               </h1>
               {item.subMen && (
                 <div>
-                  <div className=" absolute top-60 hidden group-hover:md:block hover:md:block bg-primary">
-                    <div className="w-4 h-4 left-3 -top-2 absolute mt-1 bg-primary rotate-45"></div>
+                  <div className=" absolute top-56 hidden group-hover:xl:block hover:xl:block bg-primary">
+                    {/* <div className="w-4 h-4 left-3 -top-2 absolute mt-1 bg-primary rotate-45"></div> */}
                     <div>
                       {item.subMenue.map((sub) => {
                         return (
-                          <div className="px-8 border md:border-solid border-b-accent border-x-0 border-t-0 flex justify-center">
+                          <div className="px-12 border md:border-solid border-b-accent border-x-0 border-t-0 flex justify-center">
                             <h1 className="text-base text-accent">
                               {sub.title}
                             </h1>
@@ -87,8 +87,11 @@ const MenueItems = () => {
               >
                 {item.subMenue.map((it) => {
                   return (
-                    <li className="list-none">
-                      <Link style={{ textDecoration: "none" }} href="/">
+                    <li className="list-none flex justify-center pt-2 ">
+                      <Link
+                        style={{ textDecoration: "none", color: "#3f37c9" }}
+                        href="/"
+                      >
                         {it.title}
                       </Link>
                     </li>

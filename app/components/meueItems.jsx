@@ -53,5 +53,6 @@ export const menueItems = [
       { id: "rWQfQOeHGoO1weF6Sdcp", title: "شامي", url: "/mealsList" },
     ],
   },
+  { title: "الرئيسية", id: "123456", url: "/" },
 ];
 // { title: "Home", url: "/", id: "" },

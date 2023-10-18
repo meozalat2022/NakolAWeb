@@ -5,14 +5,14 @@ const Header = () => {
   return (
     <header>
       <div>
-        <div className="md:justify-around justify-center hidden md:flex items-center">
+        <div className="xl:justify-around justify-center hidden xl:flex items-center">
           <div>
             <img src="/logo_.png" className="w-40 h-40" alt="logo" />
           </div>
           <div>
             <img
               src="/banner.png"
-              className="w-40 h-40 hidden md:block"
+              className="w-40 h-40 hidden xl:block"
               alt="Banner"
             />
           </div>

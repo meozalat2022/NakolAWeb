@@ -39,70 +39,80 @@ const Footer = () => {
     setYoutColor("#4cc9f0");
   };
   return (
-    <div className={styles.container}>
-      <div className={styles.copyRighs}>
-        <h2>All Rights Reserved: &copy; 2023</h2>
-        <h4>Website designed by Mohammed Refat</h4>
-        <h4>
-          Mail:{" "}
-          <a href="mailto:meozalat2002@hotmail.com">meozalat2002@hotmail.com</a>
-        </h4>
-        <h4>Phone: +201149045481</h4>
-      </div>
-      <div className={styles.contactUs}>
-        <h4 style={{ color: "white" }}>حمل التطبيق واستمتع بكل الوصفات</h4>
-        <Link
-          target="_blank"
-          href="https://play.google.com/store/apps/details?id=com.nakola"
-        >
-          <Image
-            className={styles.image}
-            width={150}
-            height={75}
-            src="/playStore.png"
-            alt=""
-          />
-        </Link>
-      </div>
-      <div className={styles.socialMedialContainer}>
-        <h4>تابعونا</h4>
-        <div className={styles.socialMediaIcones}>
-          <h3
-            onMouseEnter={OnFaceMouseEnter}
-            onMouseLeave={OnFaceMouseLeave}
-            className={styles.icon}
+    //container
+    <div className="w-full hidden pb-4 xl:flex bg-primary h-44">
+      {/* copright */}
+      <div className="flex flex-row m-auto items-center justify-between w-full h-full">
+        <div className="  text-white text-base p-2">
+          <h2>All Rights Reserved: &copy; 2023</h2>
+          <h4>Website designed by Mohammed Refat</h4>
+          <h4>
+            Mail:{" "}
+            <a className="text-gray-100" href="mailto:meozalat2002@hotmail.com">
+              meozalat2002@hotmail.com
+            </a>
+          </h4>
+          <h4>Phone: +201149045481</h4>
+        </div>
+        {/* contact us */}
+        <div className="flex flex-col ">
+          <h4 style={{ color: "white" }}>حمل التطبيق واستمتع بكل الوصفات</h4>
+          <Link
+            target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.nakola"
           >
-            <Link target="_blank" href={FACEBOOK}>
-              <BsFacebook style={{ color: faceColor }} />
-            </Link>
-          </h3>
-          <h3
-            onMouseEnter={OnInstaMouseEnter}
-            onMouseLeave={OnInstaMouseLeave}
-            className={styles.icon}
-          >
-            <Link target="_blank" href={INSTAGRAM}>
-              <AiFillInstagram style={{ color: instaColor }} />
-            </Link>
-          </h3>
-          <h3
-            onMouseEnter={OnTikMouseEnter}
-            onMouseLeave={OnTikMouseLeave}
-            className={styles.icon}
-          >
-            <Link target="_blank" href={TIKTOK}>
-              <FaTiktok style={{ color: tikColor }} />
-            </Link>
-          </h3>
-          <h3
-            onMouseEnter={OnYoutMouseEnter}
-            onMouseLeave={OnYoutMouseLeave}
-            className={styles.icon}
-          >
-            <Link target="_blank" href={YOUTUBE}>
-              <FaYoutube style={{ color: youtColor }} />
-            </Link>
-          </h3>
+            <Image
+              className={styles.image}
+              width={150}
+              height={75}
+              src="/playStore.png"
+              alt=""
+            />
+          </Link>
+        </div>
+        {/* social media */}
+        <div className="flex-col justify-center mr-4 items-center ">
+          <div className="flex justify-center">
+            <h4 className="text-white">تابعونا</h4>
+          </div>
+          <div className="flex">
+            <h3
+              onMouseEnter={OnFaceMouseEnter}
+              onMouseLeave={OnFaceMouseLeave}
+              className="px-4 rounded-lg flex justify-center items-center w-0 h-5"
+            >
+              <Link target="_blank" href={FACEBOOK}>
+                <BsFacebook size={25} style={{ color: faceColor }} />
+              </Link>
+            </h3>
+            <h3
+              onMouseEnter={OnInstaMouseEnter}
+              onMouseLeave={OnInstaMouseLeave}
+              className="px-4 rounded-lg flex justify-center items-center w-0 h-5"
+            >
+              <Link target="_blank" href={INSTAGRAM}>
+                <AiFillInstagram size={25} style={{ color: instaColor }} />
+              </Link>
+            </h3>
+            <h3
+              onMouseEnter={OnTikMouseEnter}
+              onMouseLeave={OnTikMouseLeave}
+              className="px-4 rounded-lg flex justify-center items-center w-0 h-5"
+            >
+              <Link target="_blank" href={TIKTOK}>
+                <FaTiktok size={25} style={{ color: tikColor }} />
+              </Link>
+            </h3>
+            <h3
+              onMouseEnter={OnYoutMouseEnter}
+              onMouseLeave={OnYoutMouseLeave}
+              className="px-4 rounded-lg flex justify-center items-center w-0 h-5"
+            >
+              <Link target="_blank" href={YOUTUBE}>
+                <FaYoutube size={25} style={{ color: youtColor }} />
+              </Link>
+            </h3>
+          </div>
         </div>
       </div>
     </div>
