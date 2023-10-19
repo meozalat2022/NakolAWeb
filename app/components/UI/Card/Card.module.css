@@ -46,8 +46,10 @@
     text-decoration: underline;
 }
 .ingredients{
-    text-align: center;
+    /* text-align: center;
     margin-bottom: 10px;
+     */
+    direction: rtl;
 }
 .list{
     list-style: none;
