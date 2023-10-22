@@ -2,7 +2,7 @@ export const MEALS = [
   {
     id: "0008iV4Vi1oq1QUzIKOJ",
     title: "سباغيتي بصلصة الطماطم الطازجة",
-    imagUrl:
+    imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2Fcf077c3138e0dd958ca47b83a64e6d5b056c3b9f-061021135953.webp?alt=media&token=645afe91-bfcc-4605-9e8d-ad34786f54ac",
     servings: "4",
     calories: "250",
@@ -28,16 +28,16 @@ export const MEALS = [
   {
     id: "08pJAsxLlptdDL3CrTju",
     title: "سمك بالطماطم والبطاطس",
-    imagUrl:
+    imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2F0fish%20potato.jpg?alt=media&token=411fe198-dd99-404a-b9b5-c6f5d9096041",
     servings: "4",
     calories: "250",
     flag: "eg",
     categoryIds: ["j0ErklzXhrgHgJp3yN3R", "j0ErklzXhrgHgJp3yN3R"],
     ingredients: [
-      "750 غ سمك بالقشر",
-      "4 حبة بطاطس",
-      "3 حبة طماطم",
+      "750 غ سمك بالقشر بالقشر بالقشر بالقشر",
+      "4 حبة بطاطس بالقشربالقشر",
+      "3 حبةبالقشربا لقشربا لقشربالقشر  طماطم",
       "750 غ سمك بالقشر",
       "2 حبة بصل، جوانح",
     ],
@@ -52,7 +52,7 @@ export const MEALS = [
   {
     id: "40CaVeIY8sVXQmR45y2p",
     title: " صوص البافلو",
-    imagUrl:
+    imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2Fc480b25460776091f3ce07b03600ef7c5e2f6c58-160523164313.jpg?alt=media&token=0e8b504a-9aef-4ac9-b8cf-88efcd6a02dc",
     servings: "4",
     calories: "250",
@@ -77,7 +77,7 @@ export const MEALS = [
   {
     id: "7Mkq0Ymxfjuo32yCBdkU",
     title: "بودينج الجزر الهندي",
-    imagUrl:
+    imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2F0carrot.jpg?alt=media&token=cb8fbba4-1058-481d-9777-fbe4d94724ad",
     servings: "4",
     calories: "250",
@@ -98,7 +98,7 @@ export const MEALS = [
   {
     id: "CpLY55mcBJmslZfoB8TW",
     title: "سلمون مشوي مع البولينتا الإيطالية",
-    imagUrl:
+    imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2F000%20(3)-622-1.jpg?alt=media&token=bee9bf46-db5a-4667-9554-15f3170c9b25",
     servings: "4",
     calories: "250",
@@ -120,7 +120,7 @@ export const MEALS = [
   // {
   //   id: "Ld29N9JpMshuw0AfisAQ",
   //   title: "سلطة الذرة بالكسبرة و البصل ",
-  //   imagUrl:
+  //   imageUrl:
   //     "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2F376727060_691450869683808_7651167222283098905_n.jpg?alt=media&token=5478e7b2-1b48-44f5-983c-d5db2c2953bc",
   //   servings: "4",
   //   calories: "250",
@@ -143,7 +143,7 @@ export const MEALS = [
   // {
   //   id: "O9VbW4Mh6LuiwcsmO2sT",
   //   title: "الفراخ بالصوص الأبيض",
-  //   imagUrl:
+  //   imageUrl:
   //     "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2F32c945cbc06a3fd80566a4c674704963c386f581-040522005038.webp?alt=media&token=700506ca-782e-4416-83bc-614d3fd01103",
   //   servings: "4",
   //   calories: "250",
@@ -169,7 +169,7 @@ export const MEALS = [
   // {
   //   id: "Oj3CgTJUMMWeCRXLUwza",
   //   title: "خضار بالشوفان للدايت",
-  //   imagUrl:
+  //   imageUrl:
   //     "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2Fe8c88b6139e80c282e7ab62aa15d6e54_w750_h500.jpg?alt=media&token=9dfb4255-03b7-42e3-bf36-88c285c97748",
   //   servings: "4",
   //   calories: "250",
@@ -190,7 +190,7 @@ export const MEALS = [
   // {
   //   id: "U2WkVhgxXVslQhaeTZp8",
   //   title: "البروكلي بالفرن",
-  //   imagUrl:
+  //   imageUrl:
   //     "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2F8581cdfe009f4708166fee81f21c458a8d91154e-130622115909.webp?alt=media&token=6a7940af-84e2-4194-a91c-b703b0c48e6f",
   //   servings: "4",
   //   calories: "250",
@@ -212,7 +212,7 @@ export const MEALS = [
   // {
   //   id: "Wi5WadJAQSwQh3IDfrJV",
   //   title: "بان كيك ",
-  //   imagUrl:
+  //   imageUrl:
   //     "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2F%D8%A7%D9%84%D8%B3%D8%B9%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%B1%D8%A7%D8%B1%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%A8%D8%A7%D9%86%D9%83%D9%8A%D9%83-%D8%A7%D9%84%D9%82%D9%8A%D9%85%D8%A9-%D8%A7%D9%84%D8%BA%D8%B0%D8%A7%D8%A6%D9%8A%D8%A9%D8%8C-%D8%A7%D9%84%D9%81%D9%88%D8%A7%D8%A6%D8%AF-%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%D8%A9-%D9%88%D9%83%D9%8A%D9%81%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%AD%D8%B6%D9%8A%D8%B1-3.jpg?alt=media&token=4cf61dfd-8039-4872-9b8a-03058d5547d6",
   //   servings: "4",
   //   calories: "250",

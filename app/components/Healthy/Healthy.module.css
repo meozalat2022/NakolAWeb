@@ -37,7 +37,7 @@
     text-decoration: underline;
 }
 .ingredients{
-    text-align: center;
+    direction: rtl;
 }
 .image{
     width: 100%;

@@ -18,7 +18,7 @@ const Card = ({ meals, key, catId }) => {
         <div className="-z-10 relative ">
           <img
             className="w-36 h-36 p-1 rounded-md border border-double border-b-4 border-accent "
-            src={meals.imagUrl}
+            src={meals.imageUrl}
             // src={meals.imageUrl[0]}
             alt={meals.title}
           />
