@@ -45,33 +45,39 @@ const MenueItems = () => {
   //     <Link href={`${item.url}/${item.id}`}>{item.title}</Link>
   //   </li>
   // );
+
+  // py-0 px-3 inline-block  xl:cursor-pointer group border xl:border-solid border-accent border-y-0 border-r-0 rounded-md w-full text-center bg-accent xs:text-center sm:text-center sm:bg-accent xl:bg-primary
   return (
     <div className="flex flex-col-reverse xl:flex-row gap-6 ">
       {menueItems.map((item) => {
         return (
           <div className="xl:flex-col justify-center">
-            <div className=" py-0 px-3 inline-block  xl:cursor-pointer group border xl:border-solid border-accent border-y-0 border-r-0 rounded-md w-full text-center bg-accent xs:text-center sm:text-center sm:bg-accent xl:bg-primary">
-              <h1
-                onClick={() =>
-                  setShowMenu(() =>
-                    showMenu !== item.title ? item.title : setShowMenu("")
-                  )
-                }
-                className="text-base xl:text-accent text-primary px-2   "
-              >
-                {item.title}
+            <div className=" hidden xl:inline-block py-0 px-3 cursor-pointer group border xl:border-solid border-accent border-y-0 border-r-0  w-full text-center xl:bg-primary">
+              <h1 className="text-base xl:text-accent text-primary px-2   ">
+                {!item.subMen ? (
+                  <a
+                    className="no-underline text-accent"
+                    href={`/mealsList/${item.id}`}
+                  >
+                    {item.title}
+                  </a>
+                ) : (
+                  item.title
+                )}
               </h1>
               {item.subMen && (
                 <div>
                   <div className=" absolute top-56 hidden group-hover:xl:block hover:xl:block bg-primary">
-                    {/* <div className="w-4 h-4 left-3 -top-2 absolute mt-1 bg-primary rotate-45"></div> */}
                     <div>
                       {item.subMenue.map((sub) => {
                         return (
                           <div className="px-12 border md:border-solid border-b-accent border-x-0 border-t-0 flex justify-center">
-                            <h1 className="text-base text-accent">
+                            <a
+                              href={`/mealsList/${sub.id}`}
+                              className="text-base text-accent no-underline py-2 hover:underline"
+                            >
                               {sub.title}
-                            </h1>
+                            </a>
                           </div>
                         );
                       })}
@@ -81,6 +87,24 @@ const MenueItems = () => {
               )}
             </div>
             {/* mobile Menue */}
+            <div className="bg-accent text-center rounded-md">
+              <h1
+                onClick={() =>
+                  setShowMenu(() =>
+                    showMenu !== item.title ? item.title : setShowMenu("")
+                  )
+                }
+                className="text-base inline-block xl:hidden xl:text-accent text-primary px-2"
+              >
+                {!item.subMen ? (
+                  <a className="no-underline" href={`/mealsList/${item.id}`}>
+                    {item.title}
+                  </a>
+                ) : (
+                  item.title
+                )}
+              </h1>
+            </div>
             {item.subMen && (
               <div
                 className={`${showMenu === item.title ? "md:block" : "hidden"}`}
@@ -88,12 +112,14 @@ const MenueItems = () => {
                 {item.subMenue.map((it) => {
                   return (
                     <li className="list-none flex justify-center pt-2 ">
-                      <Link
-                        style={{ textDecoration: "none", color: "#3f37c9" }}
-                        href="/"
-                      >
-                        {it.title}
-                      </Link>
+                      <h4>
+                        <a
+                          className="no-underline text-primary text-xs"
+                          href={`/mealsList/${it.id}`}
+                        >
+                          {it.title}
+                        </a>
+                      </h4>
                     </li>
                   );
                 })}
@@ -102,19 +128,15 @@ const MenueItems = () => {
           </div>
         );
       })}
+      <div className="bg-accent text-center rounded-md">
+        <h1 className="text-base inline-block xl:hidden xl:text-accent text-primary px-2">
+          <a className="no-underline " href="/">
+            الرئيسية
+          </a>
+        </h1>
+      </div>
     </div>
   );
 };
 
 export default MenueItems;
-
-{
-  /* <li className={styles.nav_item} key={index}>
-      <a
-        className={styles.title}
-        href={`${menu.url}/${!menu.sortBy ? menu.id : menu.sortBy}`}
-      >
-        {menu.title}
-      </a>
-    </li> */
-}

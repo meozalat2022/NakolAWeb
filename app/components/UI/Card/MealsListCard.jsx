@@ -4,128 +4,45 @@ import Flag from "react-world-flags";
 import { GiTimeBomb, GiPowerLightning } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 const MealsListCard = ({ mealsList }) => {
-  const secondColumnStart = Math.ceil(mealsList.length / 2);
-
-  const firstMealsList = mealsList.slice(0, secondColumnStart);
-  const secondMealsList = mealsList.slice(secondColumnStart);
-
   return (
-    <div className={styles.container}>
-      <div style={{ width: "100%" }}>
-        {firstMealsList.map((item) => {
-          return (
-            <ul className={styles.mealContainer}>
-              <div className={styles.imageContainer}>
-                <Link href={`/showRecipe/${item.id}`}>
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className={styles.image}
-                  />
-                </Link>
-              </div>
-              <div className={styles.titleIng}>
-                <Link href={`/showRecipe/${item.id}`}>
-                  <li className={styles.title}>{item.title}</li>
-                </Link>
-                <Link href={`/showRecipe/${item.id}`}>
-                  <li>
-                    <p className={styles.ingredients}>
-                      {item.ingredients.slice(0, 4)}
-                    </p>
-                  </li>
-                </Link>
-                <div className={styles.calFlagDura}>
-                  <Flag
-                    code={item.flag}
-                    height="16"
-                    fallback={<span>Unknown</span>}
-                  />
-
-                  <div className={styles.duration}>
-                    <h6 className={styles.durationItem}>
-                      {"السعرات الحرارية : "}
-                      {item.calories}
-                    </h6>
-                    <GiPowerLightning style={{ color: "#ed6109" }} />
-                  </div>
-                  <div className={styles.duration}>
-                    <h6 className={styles.durationItem}>
-                      {"الافراد : "}
-                      {item.servings}
-                    </h6>
-                    <IoIosPeople style={{ color: "#ed6109" }} />
-                  </div>
-                  <div className={styles.duration}>
-                    <h6 className={styles.durationItem}>
-                      {" وقت الطهي : "}
-                      {item.duration}
-                    </h6>
-                    <GiTimeBomb style={{ color: "#ed6109" }} />
-                  </div>
-                </div>
-              </div>
-            </ul>
-          );
-        })}
-      </div>
-      <div style={{ width: "100%" }}>
-        {secondMealsList.map((item) => {
-          return (
-            <ul className={styles.mealContainer}>
-              <div className={styles.imageContainer}>
-                <Link href={`/showRecipe/${item.id}`}>
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className={styles.image}
-                  />
-                </Link>
-              </div>
-              <div className={styles.titleIng}>
-                <Link href={`/showRecipe/${item.id}`}>
-                  <li className={styles.title}>{item.title}</li>
-                </Link>
-                <Link href={`/showRecipe/${item.id}`}>
-                  <li>
-                    <p className={styles.ingredients}>
-                      {item.ingredients.slice(0, 4)}
-                    </p>
-                  </li>
-                </Link>
-                <div className={styles.calFlagDura}>
-                  <Flag
-                    code={item.flag}
-                    height="16"
-                    fallback={<span>Unknown</span>}
-                  />
-
-                  <div className={styles.duration}>
-                    <h6 className={styles.durationItem}>
-                      {"السعرات الحرارية : "}
-                      {item.calories}
-                    </h6>
-                    <GiPowerLightning style={{ color: "#ed6109" }} />
-                  </div>
-                  <div className={styles.duration}>
-                    <h6 className={styles.durationItem}>
-                      {"الافراد : "}
-                      {item.servings}
-                    </h6>
-                    <IoIosPeople style={{ color: "#ed6109" }} />
-                  </div>
-                  <div className={styles.duration}>
-                    <h6 className={styles.durationItem}>
-                      {" وقت الطهي : "}
-                      {item.duration}
-                    </h6>
-                    <GiTimeBomb style={{ color: "#ed6109" }} />
-                  </div>
-                </div>
-              </div>
-            </ul>
-          );
-        })}
+    <div className="hidden gap-1 lg:flex w-[50%] my-4">
+      <div className="w-full flex m-1 mx-2 shadow-lg rounded-lg ">
+        <div className="flex w-[30%] ">
+          <img
+            className="flex w-full  rounded-l-md"
+            src={mealsList.imageUrl}
+            alt={mealsList.title}
+          />
+        </div>
+        <div className="flex w-[70%] flex-col justify-between items-center">
+          <div>
+            <h1>{mealsList.title}</h1>
+          </div>
+          <div>
+            <p>{mealsList.ingredients}</p>
+          </div>
+          <div className="flex w-full items-center justify-center pb-2">
+            <div className="flex  w-full justify-center">
+              <Flag
+                code={mealsList.flag}
+                height="16"
+                fallback={<span>Unknown</span>}
+              />
+            </div>
+            <div className="flex justify-center  w-full">
+              <span className="pr-2">{mealsList.calories}</span>
+              <GiPowerLightning />
+            </div>
+            <div className="flex justify-center  w-full">
+              <span className="pr-2">{mealsList.servings}</span>
+              <IoIosPeople />
+            </div>
+            <div className="flex justify-center w-full">
+              <span className="pr-2">{mealsList.duration}</span>
+              <GiTimeBomb />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

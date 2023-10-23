@@ -2,7 +2,7 @@ import styles from "./RatingCard.module.css";
 import Link from "next/link";
 const Card = ({ meals, head }) => {
   return (
-    <div className="flex w-full h-full flex-col">
+    <div className="hidden lg:flex w-full h-full flex-col">
       <h4 className="flex justify-end m-4">{head}</h4>
       {meals.map((item) => {
         return (

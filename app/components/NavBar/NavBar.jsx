@@ -163,7 +163,7 @@ const NavBar = () => {
             </h3>
           </div>
           <MenueItems />
-          {/* <li className="list-none border xl:border-solid border-l-accent border-y-0 border-r-0 px-4">
+          <li className="list-none border xl:border-solid border-l-accent border-y-0 border-r-0 px-4">
             <Link
               style={{ textDecoration: "none", color: "#4cc9f0" }}
               href="/"
@@ -171,7 +171,7 @@ const NavBar = () => {
             >
               الرئيسية
             </Link>
-          </li> */}
+          </li>
         </ul>
         {/* mobile nav */}
         <ul
