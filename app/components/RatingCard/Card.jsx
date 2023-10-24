@@ -6,7 +6,10 @@ const Card = ({ meals, head }) => {
       <h4 className="flex justify-end m-4">{head}</h4>
       {meals.map((item) => {
         return (
-          <Link href={`/showRecipe/${item.id}`}>
+          <Link
+            className="no-underline text-sm text-primary hover:underline hover:border hover:border-double hover:border-accent hover:border-b-4 rounded-md"
+            href={`/showRecipe/${item.id}`}
+          >
             <div className="flex m-1 flex-col rounded-md h-full ">
               <div className="flex flex-row">
                 <div className="bg-red-600 w-[60%] h-full ">
@@ -17,7 +20,7 @@ const Card = ({ meals, head }) => {
                   />
                 </div>
                 <div className=" flex justify-center flex-col items-center w-[40%]">
-                  <div>
+                  <div className="p-1">
                     <span className="text-sm text-center flex pb-1">
                       {item.title}
                     </span>

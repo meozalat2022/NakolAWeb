@@ -6,7 +6,7 @@ import RatingCard from "../components/RatingCard/RatingCard";
 const HomePage = () => {
   return (
     <div className="flex m-auto rounded-md flex-col my-4 items-center">
-      <div className="flex bg-accent">
+      <div>
         <SearchBar />
       </div>
 

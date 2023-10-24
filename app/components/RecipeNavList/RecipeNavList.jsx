@@ -3,22 +3,26 @@ import Link from "next/link";
 const RecipeNavList = ({ navList }) => {
   return (
     <>
-      <div className={styles.navBar}>
+      <div className="flex flex-wrap flex-row-reverse justify-center items-center">
         {navList.map((item, index) => {
           return (
             <ul>
               <Link
                 href={`/mealsList/${item.id}`}
-                className={styles.navListTitle}
+                className="no-underline flex flex-wrap justify-center px-1"
               >
-                <p className={styles.title}> - {item.title}</p>
+                <p className="text-primary hover:underline hover:text-accent">
+                  {item.title}
+                </p>
               </Link>
             </ul>
           );
         })}
       </div>
-      <div className={styles.recipeType}>
-        <h5>انواع الوصفات</h5>
+      <div className="flex w-[10%]  justify-center">
+        <h5 className="text-base text-primary underline font-bold">
+          انواع الوصفات
+        </h5>
       </div>
     </>
   );

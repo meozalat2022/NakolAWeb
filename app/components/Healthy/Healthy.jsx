@@ -27,10 +27,10 @@ const Healthy = () => {
 
   return (
     <div className="flex flex-col items-center  w-full">
-      <div className="w-full flex justify-end">
+      <div className="w-full flex xl:justify-end justify-center">
         <h3>وصفات صحية</h3>
       </div>
-      <div className="grid grid-cols-3">
+      <div className=" w-full xl:grid xl:grid-cols-3">
         {topHealthy.map((item) => {
           return <HealthyCard meals={item} />;
         })}

@@ -1,18 +1,19 @@
 import styles from "./Card.module.css";
+import Link from "next/link";
 const HealthyCard = ({ meals }) => {
   return (
     <>
-      <div className="hidden lg:flex border  mx-1 shadow-lg rounded-lg">
+      <div className="cursor-pointer hidden hover:border hover:border-double hover:border-b-4 hover:border-accent lg:flex border  mx-1 shadow-lg rounded-lg">
         <div className="flex">
-          <div className="bg-red-800 w-[30%] h-full">
+          <div className=" w-[30%] h-full">
             <img
-              className="w-full h-full flex"
+              className="rounded-l-md w-full h-full flex"
               src={meals.imageUrl}
               alt={meals.title}
             />
           </div>
-          <div className=" w-[70%] h-full justify-center items-center">
-            <div className="flex justify-center items-center">
+          <div className="  w-[70%] h-full justify-center items-center">
+            <div className="text-primary hover:underline flex justify-center items-center">
               <h4>{meals.title}</h4>
             </div>
             <div
@@ -26,12 +27,23 @@ const HealthyCard = ({ meals }) => {
 
       {/* Mobile Card */}
 
-      <div className="flex lg:hidden bg-red-900 m-3 w-full h-full border border-solid border-blue-700">
-        <div className="flex w-full h-full p-2">
-          <div className="flex w-[40%] bg-white">image</div>
-          <div className="flex w-[60%] bg-yellow-300">Ingredients</div>
+      <Link
+        href="#"
+        className="flex lg:hidden  m-3 w-full h-full justify-center items-end"
+      >
+        <div className="flex w-full h-full p-2 flex-col justify-center items-center ">
+          <div className=" flex w-full">
+            <img
+              className=" w-full h-full flex"
+              src={meals.imageUrl}
+              alt={meals.title}
+            />
+          </div>
+          <div className="flex justify-center items-center">
+            <span className="text-center text-sm">{meals.title}</span>
+          </div>
         </div>
-      </div>
+      </Link>
     </>
   );
 };
