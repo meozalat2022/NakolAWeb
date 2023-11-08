@@ -101,7 +101,7 @@ export const MEALS = [
   },
   {
     id: "CpLY55mcBJmslZfoB8TW",
-    title: "سلمون مشوي مع البولينتا الإيطالية",
+    title: "Hello",
     imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/nakola-d9f7f.appspot.com/o/Meals%2F000%20(3)-622-1.jpg?alt=media&token=bee9bf46-db5a-4667-9554-15f3170c9b25",
     servings: "4",

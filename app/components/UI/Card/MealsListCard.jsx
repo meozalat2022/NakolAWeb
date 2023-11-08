@@ -60,7 +60,10 @@ const MealsListCard = ({ mealsList }) => {
       </div>
       {/* mobile meals list */}
 
-      <Link className="xl:hidden flex" href={`/showRecipe/${mealsList.id}`}>
+      <Link
+        className="xl:hidden lg:hidden w-[80%] flex"
+        href={`/showRecipe/${mealsList.id}`}
+      >
         <div className="flex w-full h-full p-2 flex-col justify-center items-center ">
           <div className=" flex w-full">
             <img

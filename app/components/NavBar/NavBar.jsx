@@ -103,16 +103,16 @@ const NavBar = () => {
     //   </ul>
     // </div>
 
-    <nav className="xl:bg-primary xl:h-16  xl:flex xl:items-center xl:justify-center">
-      <div className="flex xl:items-center lg:items-center xl:justify-center font-medium justify-around">
-        <div className="z-50 p-5 xl:w-auto w-full xl:hidden flex justify-between">
+    <nav className="xl:bg-primary  xl:h-16  xl:flex xl:items-center xl:justify-center">
+      <div className="flex  xl:items-center lg:items-center xl:justify-center font-medium justify-around">
+        <div className="z-50  p-5 xl:w-auto w-full xl:hidden flex justify-between">
           <img
             src="/logo_.png"
             alt="logo"
             className="xl:cursor-pointer h-16 pr-40"
           />
           <div
-            className="text-3xl xl:hidden flex justify-center items-center"
+            className="text-3xl  xl:hidden flex justify-center items-center"
             onClick={() => setOpen(!open)}
           >
             {open ? (
@@ -176,7 +176,7 @@ const NavBar = () => {
         {/* mobile nav */}
         <ul
           className={`
-        xl:hidden bg-white  fixed w-full top-0 overflow-y-auto bottom-0 py-24 pl-4
+        xl:hidden bg-white items-center flex justify-center m-auto fixed w-full h-screen top-0 overflow-y-auto bottom-0 py-24 pl-4
         duration-500 ${open ? "left-0" : "left-[-100%]"}
         `}
         >

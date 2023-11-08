@@ -10,6 +10,8 @@ module.exports = {
       colors: {
         primary: "#3f37c9",
         accent: "#4cc9f0",
+        mouseIn: "#4cc9f0",
+        mouseOut: "#5850e6",
       },
     },
   },

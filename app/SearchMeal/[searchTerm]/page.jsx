@@ -1,15 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchMeals } from "../redux/reducers/mealSlice";
+import { fetchMeals } from "../../redux/reducers/mealSlice";
 import styles from "./SearchMeal.module.css";
 import Link from "next/link";
-import { MEALS } from "../data/meals";
-const SearchMeal = () => {
+import MealsListCard from "../../components/UI/Card/MealsListCard";
+import { MEALS } from "../../data/meals";
+const SearchMeal = ({ params }) => {
   const dispatch = useDispatch();
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(params.searchTerm);
   const meals = useSelector((state) => state.meals.data);
-
+  console.log(params.searchTerm);
   useEffect(() => {
     // dispatch(fetchMeals());
   }, []);
@@ -29,19 +30,18 @@ const SearchMeal = () => {
   // }
 
   return (
-    <div className={styles.container}>
+    <div className="flex flex-col  w-full self-center justify-center border border-solid">
       <input
+        value={searchTerm}
+        className="w-1/2 flex self-center mt-5 rounded-md p-2 text-center"
         type="text"
         placeholder="بحث عن وصفة"
         autoFocus
         onChange={(event) => setSearchTerm(event.target.value)}
       />
-      <div
-        style={{ opacity: searchTerm === "" ? 0 : 1 }}
-        className={styles.mealContainer}
-      >
+      <div>
         {MEALS.filter((val) => {
-          if (searchTerm == "") {
+          if (params.searchTerm == "") {
             return val;
           } else if (
             val.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -50,25 +50,8 @@ const SearchMeal = () => {
           }
         }).map((item) => {
           return (
-            <div className={styles.card}>
-              <Link
-                href={`/showRecipe/${item.id}`}
-                className={styles.imageContainer}
-              >
-                <img
-                  className={styles.image}
-                  src={item.imageUrl}
-                  alt={item.title}
-                />
-              </Link>
-              <div className={styles.titleIngredients}>
-                <Link href={`/showRecipe/${item.id}`}>
-                  <h4 className={styles.title}>{item.title}</h4>
-                </Link>
-                <p className={styles.ingredients}>
-                  {item.ingredients.slice(0, 3)}
-                </p>
-              </div>
+            <div className="flex justify-center">
+              <MealsListCard mealsList={item} />
             </div>
           );
         })}
