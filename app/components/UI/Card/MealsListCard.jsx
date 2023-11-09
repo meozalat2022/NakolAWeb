@@ -6,7 +6,7 @@ import { IoIosPeople } from "react-icons/io";
 const MealsListCard = ({ mealsList }) => {
   return (
     <>
-      <div className="hidden gap-1 lg:flex w-[50%] my-4">
+      <div className="hidden group gap-1 lg:flex w-[50%] my-4">
         <Link
           href={`/showRecipe/${mealsList.id}`}
           // style={{ textDecoration: "none", color: "#4cc9f0" }}
@@ -14,7 +14,7 @@ const MealsListCard = ({ mealsList }) => {
         >
           <div className="flex w-[30%] ">
             <img
-              className=" flex w-full  rounded-l-md"
+              className="group-hover:opacity-80 transition-opacity duration-200  flex w-full  rounded-l-md"
               src={mealsList.imageUrl}
               alt={mealsList.title}
             />
@@ -29,26 +29,26 @@ const MealsListCard = ({ mealsList }) => {
               <p className={styles.ingredients}>{mealsList.ingredients}</p>
             </div>
             <div className="flex w-full items-center justify-center pb-2">
-              <div className="flex  w-full justify-center">
+              <div className="flex hover:scale-110 w-full justify-center">
                 <Flag
                   code={mealsList.flag}
                   height="16"
                   fallback={<span>Unknown</span>}
                 />
               </div>
-              <div className="flex justify-center  w-full">
+              <div className="flex hover:scale-110 justify-center  w-full">
                 <span className="pr-2 text-accent font-bold">
                   {mealsList.calories}
                 </span>
                 <GiPowerLightning color="red" />
               </div>
-              <div className="flex justify-center  w-full">
+              <div className="flex hover:scale-110 justify-center  w-full">
                 <span className="pr-2 text-accent font-bold">
                   {mealsList.servings}
                 </span>
                 <IoIosPeople color={"#3f37c9"} />
               </div>
-              <div className="flex justify-center w-full">
+              <div className="flex hover:scale-110 justify-center w-full">
                 <span className="pr-2 text-accent font-bold">
                   {mealsList.duration}
                 </span>

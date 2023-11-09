@@ -8,7 +8,7 @@ const Card = ({ meals, key, catId }) => {
   const catTitle = CATEGORIES.find((item) => item.id === meals.categoryId);
   const ingredientsArr = meals.ingredients.slice(0, 2);
   return (
-    <div className=" hover:shadow-2xl w-full shadow-lg rounded-md mt-1 md:w-1/2 lg:w-1/4 xl:w-1/6  px-2 flex flex-col justify-between items-center p-1 mx-1">
+    <div className="group hover:shadow-2xl w-full shadow-lg rounded-md mt-1 md:w-1/2 lg:w-1/4 xl:w-1/6  px-2 flex flex-col justify-between items-center p-1 mx-1">
       <Link className="w-full h-full " href={`/showRecipe/${meals.id}`}>
         <h3 className="text-center hover:text-accent overflow-hidden text-primary text-sm">
           {meals.title}
@@ -17,7 +17,7 @@ const Card = ({ meals, key, catId }) => {
       <Link href={`/showRecipe/${meals.id}`}>
         <div className="-z-10 relative ">
           <img
-            className="w-36 h-36  p-1 rounded-md border border-double border-b-4 border-accent "
+            className="w-36 h-36 group-hover:opacity-80 transition-opacity duration-200 p-1 rounded-md border border-double border-b-4 border-accent "
             src={meals.imageUrl}
             // src={meals.imageUrl[0]}
             alt={meals.title}

@@ -42,7 +42,7 @@ const SearchBar = () => {
           </div>
         </div>
       </Link> */}
-      <div className="flex-1 ">
+      {/* <div className="flex-1 ">
         <form onSubmit={handleSubmit} className="">
           <input
             value={search}
@@ -61,7 +61,7 @@ const SearchBar = () => {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -3,16 +3,19 @@ import Link from "next/link";
 const HealthyCard = ({ meals }) => {
   return (
     <>
-      <div className="cursor-pointer hidden hover:border hover:border-double hover:border-b-4 hover:border-accent lg:flex border  mx-1 shadow-lg rounded-lg">
+      <Link
+        href={`/showRecipe/${meals.id}`}
+        className="group cursor-pointer no-underline text-sm text-black hidden hover:scale-105 border-double border-b-4 border-accent lg:flex border  mx-1 shadow-lg rounded-lg"
+      >
         <div className="flex">
-          <div className=" w-[30%] h-full">
+          <div className="w-[30%] h-full">
             <img
-              className="rounded-l-md w-full h-full flex"
+              className="rounded-l-md w-full h-full flex group-hover:opacity-80 transition-opacity duration-200"
               src={meals.imageUrl}
               alt={meals.title}
             />
           </div>
-          <div className="  w-[70%] h-full justify-center items-center">
+          <div className="w-[70%] h-full justify-center items-center">
             <div className="text-primary hover:underline flex justify-center items-center">
               <h4>{meals.title}</h4>
             </div>
@@ -23,12 +26,12 @@ const HealthyCard = ({ meals }) => {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       {/* Mobile Card */}
 
       <Link
-        href="#"
+        href={`/showRecipe/${meals.id}`}
         className="flex lg:hidden  m-3 w-full h-full justify-center items-end"
       >
         <div className="flex w-full h-full p-2 flex-col justify-center items-center ">

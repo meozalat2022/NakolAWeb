@@ -36,29 +36,29 @@ const ShowRecipe = ({ params }) => {
       </div>
       <div className="w-1/2 h-1/2 flex justify-center items-center">
         <img
-          className="w-[90%] h-[90%] p-1 rounded-md border border-double border-accent border-b-4"
+          className="hover:opacity-80 w-[90%] h-[90%] p-1 rounded-md border border-double border-accent border-b-4"
           src={meal.imageUrl}
           alt={meal.title}
         />
       </div>
-      <div className="flex my-4 p-2 justify-center items-center">
+      <div className="flex  my-4 p-2 justify-center items-center">
         <Flag code={meal.flag} height="16" fallback={<span>Unknown</span>} />
 
-        <div className="flex justify-between items-center">
+        <div className="flex hover:underline justify-between items-center">
           <h6 className={`${styles.durationItem} px-5`}>
             {"السعرات الحرارية : "}
             {meal.calories}
           </h6>
           <GiPowerLightning style={{ color: "#ed6109" }} />
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex hover:underline justify-between items-center">
           <h6 className={`${styles.durationItem} px-5`}>
             {"الافراد : "}
             {meal.servings}
           </h6>
           <IoIosPeople style={{ color: "#ed6109" }} />
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex hover:underline justify-between items-center">
           <h6 className={`${styles.durationItem} px-5`}>
             {" وقت الطهي : "}
             {meal.duration}

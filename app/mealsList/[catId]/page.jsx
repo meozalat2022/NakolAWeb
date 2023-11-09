@@ -15,7 +15,7 @@ const MealsList = ({ params }) => {
   // }, [params.catId]);
 
   return (
-    <div className="flex justify-between flex-wrap">
+    <div className="flex justify-center flex-wrap ">
       {MEALS.map((item) => (
         <MealsListCard mealsList={item} />
       ))}
