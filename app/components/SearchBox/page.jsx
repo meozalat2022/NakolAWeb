@@ -1,16 +1,20 @@
 "use client";
+import React from "react";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchMeals } from "../../redux/reducers/mealSlice";
-import styles from "./SearchMeal.module.css";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import MealsListCard from "../../components/UI/Card/MealsListCard";
 import { MEALS } from "../../data/meals";
-const SearchMeal = ({ params }) => {
+import SearchBar from "@/app/components/SearchBar/SearchBar";
+const SearchBox = () => {
+  const searchParams = useSearchParams();
+  const searchWord = searchParams.get("search");
   const dispatch = useDispatch();
-  const [searchTerm, setSearchTerm] = useState(params.searchTerm);
+  const [searchTerm, setSearchTerm] = useState(searchWord);
   const meals = useSelector((state) => state.meals.data);
-  console.log(params.searchTerm);
+  console.log(searchParams.get("search"));
   useEffect(() => {
     // dispatch(fetchMeals());
   }, []);
@@ -41,7 +45,7 @@ const SearchMeal = ({ params }) => {
       />
       <div>
         {MEALS.filter((val) => {
-          if (params.searchTerm == "") {
+          if (searchParams.search == "") {
             return val;
           } else if (
             val.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -60,4 +64,4 @@ const SearchMeal = ({ params }) => {
   );
 };
 
-export default SearchMeal;
+export default SearchBox;
