@@ -48,10 +48,14 @@ const SearchBar = () => {
           />
           <div className="flex justify-center mt-2">
             <Link
-              href={{
-                pathname: "./SearchMeal",
-                query: { search: search },
-              }}
+              href={
+                search.length <= 0
+                  ? "#"
+                  : {
+                      pathname: "./SearchMeal",
+                      query: { search: search },
+                    }
+              }
               className={` ${
                 search.length <= 0
                   ? "no-underline text-center p-2 w-[80%] border-none outline-none rounded-md font-bold text-base cursor-none text-gray-100 bg-gray-400"

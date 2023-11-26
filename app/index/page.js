@@ -3,6 +3,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import styles from "./HomePage.module.css";
 import Healthy from "../components/Healthy/Healthy";
 import RatingCard from "../components/RatingCard/RatingCard";
+import MealSlider from "../components/MealSlider/pages";
 const HomePage = () => {
   return (
     <div className="flex m-auto rounded-md flex-col my-4 items-center">
@@ -10,16 +11,17 @@ const HomePage = () => {
         <SearchBar />
       </div>
 
+      <div className=" w-[950px] max-h-[450px]">
+        <MealSlider />
+      </div>
       <div
         className={`${styles.latestMealsHead} w-[80%] flex justify-end mb-1`}
       >
         <h4 className="bg-success">احدث الوصفات</h4>
       </div>
-
       <div className={styles.latest}>
         <LatestTenMeals />
       </div>
-
       <div className="flex justify-around items-center gap-1 w-4/5 	">
         <div className="flex justify-center self-start items-center flex-col w-4/5	">
           <Healthy />

@@ -8,13 +8,14 @@ import { useSearchParams } from "next/navigation";
 import MealsListCard from "../../components/UI/Card/MealsListCard";
 import { MEALS } from "../../data/meals";
 import SearchBar from "@/app/components/SearchBar/SearchBar";
+import Image from "next/image";
 const SearchBox = () => {
   const searchParams = useSearchParams();
   const searchWord = searchParams.get("search");
+  console.log(searchWord);
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState(searchWord);
   const meals = useSelector((state) => state.meals.data);
-  console.log(searchParams.get("search"));
   useEffect(() => {
     // dispatch(fetchMeals());
   }, []);
@@ -32,9 +33,16 @@ const SearchBox = () => {
   //     </div>
   //   );
   // }
+  const searchedMeals = MEALS.filter((val) => {
+    if (searchWord == "") {
+      return val;
+    } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+      return val;
+    }
+  });
 
   return (
-    <div className="flex flex-col  w-full self-center justify-center border border-solid">
+    <div className="flex flex-col  w-full self-center justify-center">
       <input
         value={searchTerm}
         className="w-1/2 flex self-center mt-5 rounded-md p-2 text-center"
@@ -43,22 +51,25 @@ const SearchBox = () => {
         autoFocus
         onChange={(event) => setSearchTerm(event.target.value)}
       />
+      {searchTerm == "" && (
+        <div className="h-screen w-full ">
+          <h3 className="text-center mt-28">لا يوجد وصفات</h3>
+        </div>
+      )}
       <div>
-        {MEALS.filter((val) => {
-          if (searchParams.search == "") {
-            return val;
-          } else if (
-            val.title.toLowerCase().includes(searchTerm.toLowerCase())
-          ) {
-            return val;
-          }
-        }).map((item) => {
-          return (
-            <div className="flex justify-center">
-              <MealsListCard mealsList={item} />
-            </div>
-          );
-        })}
+        {!searchedMeals || searchedMeals.length < 1 ? (
+          <div className="flex justify-center items-center">
+            <h3 className="text-lg text-center">لا يوجد نتيجة للبحث</h3>
+          </div>
+        ) : (
+          searchedMeals.map((item) => {
+            return (
+              <div className="flex justify-center">
+                <MealsListCard mealsList={item} />
+              </div>
+            );
+          })
+        )}
       </div>
     </div>
   );

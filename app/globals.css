@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .social_media_icon_wrapper{
+        @apply bg-blue-700 m-1 shadow-xl rounded-md p-[6px] text-[18px] cursor-pointer hover:bg-accent hover:text-white
+    }
+}
+.slider_image{
+    padding: 5px;
+    border-width: 2px 2px 5px 2px;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: double;
+    border-radius: 5px;
+    border-color: rgb(198, 207, 214);
+}
