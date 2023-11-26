@@ -21,7 +21,7 @@ export default function Home() {
   // const mealByCatData = useSelector((state) => state.meals.mealsByCatData);
   // const allCateg = useSelector((state) => state.category.data);
   // const latest = useSelector((state) => state.meals.latestMeals);
-  // console.log(latest.length);
+
   useEffect(() => {
     setLoading(true);
     // dispatch(fetchCategories());
@@ -31,15 +31,11 @@ export default function Home() {
   }, []);
   if (loading) {
     return (
-      <div className="flex justify-center items-center w-full h-screen">
-        <button type="button" class="bg-indigo-500 ..." disabled>
-          <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
-          Processing...
-        </button>
+      <div className="bg-white w-full h-screen  flex items-center justify-center mt-10">
+        <img className="w-40" src="/loading.gif" alt="loading" />
       </div>
     );
   }
-  //<main>className="min-h-screen flex justify-between p-16"
   return (
     <main className="w-auto">
       <HomePage />
