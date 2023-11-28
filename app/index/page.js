@@ -6,18 +6,19 @@ import RatingCard from "../components/RatingCard/RatingCard";
 import MealSlider from "../components/MealSlider/pages";
 const HomePage = () => {
   return (
-    <div className="flex m-auto rounded-md flex-col my-4 items-center">
+    <div className=" flex m-auto rounded-md flex-col my-4 items-center">
       <div>
         <SearchBar />
       </div>
 
-      <div className=" w-[950px] max-h-[450px]">
+      <div className="-z-10 w-[950px] max-h-[450px] mb-10">
+        <h3 className=" flex justify-end bg-blackish">الأعلى تقيماً</h3>
         <MealSlider />
       </div>
       <div
-        className={`${styles.latestMealsHead} w-[80%] flex justify-end mb-1`}
+        className={`${styles.latestMealsHead} mt-12 w-[80%] flex justify-end mb-1`}
       >
-        <h4 className="bg-success">احدث الوصفات</h4>
+        <h4 className="bg-blackish">احدث الوصفات</h4>
       </div>
       <div className={styles.latest}>
         <LatestTenMeals />

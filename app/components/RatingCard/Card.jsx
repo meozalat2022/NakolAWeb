@@ -1,6 +1,62 @@
 import styles from "./RatingCard.module.css";
 import Link from "next/link";
+import { GiChefToque } from "react-icons/gi";
+
 const Card = ({ meals, head }) => {
+  const generateRating = (rating) => {
+    switch (rating) {
+      case 1:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 2:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 3:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 4:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 5:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+          </div>
+        );
+    }
+  };
   return (
     <div className="hidden lg:flex w-full h-full flex-col">
       <h4 className="flex justify-end m-4">{head}</h4>
@@ -25,8 +81,12 @@ const Card = ({ meals, head }) => {
                       {item.title}
                     </span>
                   </div>
-                  <div>
-                    <span>{item.calories}</span>
+                  <div className="w-20">
+                    <span>
+                      {!item.mealRating
+                        ? generateRating(4)
+                        : generateRating(mealRating)}
+                    </span>
                   </div>
                 </div>
               </div>

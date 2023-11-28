@@ -17,7 +17,7 @@ const NavBar = () => {
 
   const [open, setOpen] = useState(false);
   return (
-    <nav className="xl:bg-primary  xl:h-16  xl:flex xl:items-center xl:justify-center">
+    <nav className="xl:bg-primary xl:h-16 xl:flex xl:items-center xl:justify-center">
       <div className="flex  xl:items-center lg:items-center xl:justify-center font-medium justify-around">
         <div className="z-50  p-5 xl:w-auto w-full xl:hidden flex justify-between">
           <img

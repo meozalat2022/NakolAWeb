@@ -3,10 +3,67 @@ import styles from "./Card.module.css";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import { CATEGORIES } from "../../../data/categories";
-const Card = ({ meals, key, catId }) => {
+import { GiChefToque } from "react-icons/gi";
+
+const Card = ({ meals, key, catId, mealRating }) => {
   const cat = useSelector((state) => state.category.data);
   const catTitle = CATEGORIES.find((item) => item.id === meals.categoryId);
   const ingredientsArr = meals.ingredients.slice(0, 2);
+
+  const generateRating = (rating) => {
+    switch (rating) {
+      case 1:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 2:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 3:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 4:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 5:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+          </div>
+        );
+    }
+  };
   return (
     <div className="group hover:shadow-2xl w-full shadow-lg rounded-md mt-1 md:w-1/2 lg:w-1/4 xl:w-1/6  px-2 flex flex-col justify-between items-center p-1 mx-1">
       <Link className="w-full h-full " href={`/showRecipe/${meals.id}`}>
@@ -29,12 +86,13 @@ const Card = ({ meals, key, catId }) => {
           {ingredientsArr}...شاهد المزيد
         </h5>
       </div>
-      <Link
+      {!mealRating ? generateRating(4) : generateRating(mealRating)}
+      {/* <Link
         className=" w-full h-full"
         href={`/mealsList/${catTitle && catTitle.id}`}
       >
         <p className="text-accent font-bold">{catTitle && catTitle.title}</p>
-      </Link>
+      </Link> */}
     </div>
   );
 };

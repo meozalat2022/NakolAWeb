@@ -1,10 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import Flag from "react-world-flags";
-import { GiTimeBomb, GiPowerLightning } from "react-icons/gi";
+import { GiTimeBomb, GiPowerLightning, GiChefToque } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 import styles from "../UI/Card/Card.module.css";
 import Link from "next/link";
+
 const Slide = ({
   image,
   title,
@@ -14,13 +15,68 @@ const Slide = ({
   duration,
   ingredients,
   id,
+  mealRating,
 }) => {
+  const generateRating = (rating) => {
+    switch (rating) {
+      case 1:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 2:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 3:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 4:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 5:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+          </div>
+        );
+    }
+  };
   return (
     <div className=" bg-gray-100 rounded-lg">
       <div className="flex p-4">
         <div className="slider_image bg-white">
           <Image
-            className="p-2"
+            className="p-2 "
             src={image}
             alt={title}
             width={500}
@@ -55,6 +111,11 @@ const Slide = ({
               </h6>
               <GiTimeBomb style={{ color: "#ed6109" }} />
             </div>
+          </div>
+          <div className="flex justify-center mt-8">
+            <span className="flex justify-between">
+              {!mealRating ? generateRating(4) : generateRating(mealRating)}
+            </span>
           </div>
           <div className="p-6 mt-10 rounded-lg mx-2 flex justify-center items-center">
             <h4 className={`${styles.ingredients} text-center`}>

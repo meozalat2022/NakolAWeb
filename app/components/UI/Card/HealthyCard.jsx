@@ -1,6 +1,62 @@
 import styles from "./Card.module.css";
 import Link from "next/link";
-const HealthyCard = ({ meals }) => {
+import { GiChefToque } from "react-icons/gi";
+
+const HealthyCard = ({ meals, mealRating }) => {
+  const generateRating = (rating) => {
+    switch (rating) {
+      case 1:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 2:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 3:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 4:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="#D3D3D3" />
+          </div>
+        );
+      case 5:
+        return (
+          <div className="flex gap-1 text-[20px] text-[#ff9529]">
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+            <GiChefToque color="blue" />
+          </div>
+        );
+    }
+  };
   return (
     <>
       <Link
@@ -20,10 +76,13 @@ const HealthyCard = ({ meals }) => {
               <h4>{meals.title}</h4>
             </div>
             <div
-              className={`${styles.ingredients} flex justify-center items-center text-center px-2`}
+              className={`${styles.ingredients} flex justify-center items-center text-center px-2 h-28`}
             >
               <h4>{meals.ingredients}</h4>
             </div>
+            <span className=" flex justify-center">
+              {!mealRating ? generateRating(4) : generateRating(mealRating)}
+            </span>
           </div>
         </div>
       </Link>
