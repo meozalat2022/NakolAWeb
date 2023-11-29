@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchSingleMeal,
@@ -12,7 +12,11 @@ import { GiTimeBomb, GiPowerLightning } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 import Card from "../../components/RatingCard/Card";
 import { MEALS } from "@/app/data/meals";
+import { GiChefToque } from "react-icons/gi";
+
 const ShowRecipe = ({ params }) => {
+  const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
   const dispatch = useDispatch();
   // const meal = useSelector((state) => state.meals.meal);
   const similarMeals = useSelector((state) => state.meals.mealsByCatData);
@@ -75,7 +79,7 @@ const ShowRecipe = ({ params }) => {
           {meal.ingredients &&
             meal.ingredients.map((item, index) => {
               return (
-                <ul className="list-none mb-10">
+                <ul key={index} className="list-none mb-10">
                   <li className="flex flex-row-reverse">
                     <h4 className="flex min-w-[30px] justify-end ml-2">
                       {" "}
@@ -93,7 +97,7 @@ const ShowRecipe = ({ params }) => {
         {meal.steps &&
           meal.steps.map((item, index) => {
             return (
-              <ul className="list-none mb-10">
+              <ul key={index} className="list-none mb-10">
                 <li className="flex flex-row-reverse">
                   <h4 className="flex min-w-[30px] justify-end ml-2">
                     {" "}
@@ -104,6 +108,30 @@ const ShowRecipe = ({ params }) => {
               </ul>
             );
           })}
+      </div>
+      <div>
+        <h4 className="text-center">قيم الوصفة</h4>
+        {[...Array(5)].map((item, index) => {
+          const currentRating = index + 1;
+          return (
+            <label>
+              <input
+                className="hidden"
+                type="radio"
+                name="rating"
+                value={currentRating}
+                onClick={() => setRating(currentRating)}
+              />
+              <GiChefToque
+                className="cursor-pointer"
+                size={35}
+                color={currentRating <= (hover || rating) ? "blue" : "#D3D3D3"}
+                onMouseEnter={() => setHover(currentRating)}
+                onMouseLeave={() => setHover(null)}
+              />
+            </label>
+          );
+        })}
       </div>
     </div>
   );
