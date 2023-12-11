@@ -9,21 +9,21 @@ import HealthyCard from "../UI/Card/HealthyCard";
 const Healthy = () => {
   const healthy = useSelector((state) => state.meals.healthyMeals);
 
-  const topHealthy = MEALS.slice(0, 3);
+  const topHealthy = healthy.slice(0, 3);
 
-  // if (!healthy || healthy.length < 1) {
-  //   return (
-  //     <div
-  //       style={{
-  //         display: "flex",
-  //         justifyContent: "center",
-  //         alignItems: "center",
-  //       }}
-  //     >
-  //       <h3>Loading...</h3>
-  //     </div>
-  //   );
-  // }
+  if (!healthy || healthy.length < 1) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h3>Loading...</h3>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center  w-full">

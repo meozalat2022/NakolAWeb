@@ -10,27 +10,40 @@ const LatestTenMeals = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(fetchLatestMeals());
+    dispatch(fetchLatestMeals());
   }, []);
-  // const latestTenMeals = useSelector((state) => state.meals.latestMeals);
+  const latestTenMeals = useSelector((state) => state.meals.latestMeals);
 
-  // if (!latestTenMeals || latestTenMeals.length < 1) {
-  //   return (
-  //     <div
-  //       style={{
-  //         display: "flex",
-  //         justifyContent: "center",
-  //         alignItems: "center",
-  //       }}
-  //     >
-  //       <h3>Loading...</h3>
-  //     </div>
-  //   );
+  //filter latest ten meals from meals store
+
+  // const meals = useSelector((state) => state.meals.data);
+
+  // const latestTenMeals = [];
+  // for (let i = 0; i < 10; i++) {
+  //   latestTenMeals.push(meals[i]);
   // }
+
+  // latestTenMeals.sort(function (a, b) {
+  //   return b.timestamp - a.timestamp;
+  // });
+
+  if (!latestTenMeals || latestTenMeals.length < 1) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h3>Loading...</h3>
+      </div>
+    );
+  }
   return (
     <div className="flex flex-wrap justify-center">
-      {MEALS.map((item, index) => {
-        return <Card meals={item} key={item.id} />;
+      {latestTenMeals.map((item, index) => {
+        return <Card meals={item} key={index} />;
       })}
     </div>
   );

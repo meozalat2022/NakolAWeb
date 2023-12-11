@@ -26,7 +26,7 @@ const SearchBar = () => {
   // }
   return (
     <div className="xl:flex hidden justify-between w-[90%] my-5 pt-6 px-2 pb-2 ">
-      <RecipeNavList navList={CATEGORIES} />
+      <RecipeNavList navList={categories} />
       {/* <Link href={"/SearchMeal"}>
         <div className="flex flex-col self-center items-center w-[150px]">
           <div className="flex justify-end">

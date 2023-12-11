@@ -6,7 +6,7 @@ const RecipeNavList = ({ navList }) => {
       <div className="flex flex-wrap flex-row-reverse justify-center items-center">
         {navList.map((item, index) => {
           return (
-            <ul>
+            <ul key={index}>
               <Link
                 href={`/mealsList/${item.id}`}
                 className="no-underline flex flex-wrap justify-center px-1"

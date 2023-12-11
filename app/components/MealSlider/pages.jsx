@@ -14,8 +14,9 @@ const MealSlider = () => {
   return (
     <div>
       <Slider {...setting}>
-        {MEALS.map((item) => (
+        {MEALS.map((item, index) => (
           <Slide
+            key={index}
             id={item.id}
             title={item.title}
             image={item.imageUrl}

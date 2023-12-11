@@ -49,9 +49,9 @@ const MenueItems = () => {
   // py-0 px-3 inline-block  xl:cursor-pointer group border xl:border-solid border-accent border-y-0 border-r-0 rounded-md w-full text-center bg-accent xs:text-center sm:text-center sm:bg-accent xl:bg-primary
   return (
     <div className="flex flex-col-reverse xl:flex-row gap-6 ">
-      {menueItems.map((item) => {
+      {menueItems.map((item, index) => {
         return (
-          <div className="xl:flex-col justify-center">
+          <div key={index} className="xl:flex-col justify-center">
             <div className=" hidden xl:inline-block py-0 px-3 cursor-pointer group border xl:border-solid border-accent border-y-0 border-r-0  w-full text-center xl:bg-primary">
               <h1 className="text-base xl:text-accent text-primary px-2   ">
                 {!item.subMen ? (
@@ -69,9 +69,12 @@ const MenueItems = () => {
                 <div>
                   <div className=" absolute top-56 hidden group-hover:xl:block hover:xl:block bg-primary">
                     <div>
-                      {item.subMenue.map((sub) => {
+                      {item.subMenue.map((sub, index) => {
                         return (
-                          <div className="px-12 border md:border-solid border-b-accent border-x-0 border-t-0 flex justify-center">
+                          <div
+                            key={index}
+                            className="px-12 border md:border-solid border-b-accent border-x-0 border-t-0 flex justify-center"
+                          >
                             <a
                               href={`/mealsList/${sub.id}`}
                               className="text-base text-accent no-underline py-2 hover:underline"
@@ -109,9 +112,12 @@ const MenueItems = () => {
               <div
                 className={`${showMenu === item.title ? "md:block" : "hidden"}`}
               >
-                {item.subMenue.map((it) => {
+                {item.subMenue.map((it, index) => {
                   return (
-                    <li className="list-none flex justify-center pt-2 ">
+                    <li
+                      key={index}
+                      className="list-none flex justify-center pt-2 "
+                    >
                       <h4>
                         <a
                           className="no-underline text-primary text-xs"

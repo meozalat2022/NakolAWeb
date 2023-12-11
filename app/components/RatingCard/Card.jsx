@@ -60,9 +60,10 @@ const Card = ({ meals, head }) => {
   return (
     <div className="hidden lg:flex w-full h-full flex-col">
       <h4 className="flex justify-end m-4">{head}</h4>
-      {meals.map((item) => {
+      {meals.map((item, index) => {
         return (
           <Link
+          key={index}
             className="no-underline text-sm text-primary hover:underline hover:border hover:border-double hover:border-accent hover:border-b-4 rounded-md"
             href={`/showRecipe/${item.id}`}
           >

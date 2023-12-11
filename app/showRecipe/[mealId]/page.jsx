@@ -13,24 +13,46 @@ import { IoIosPeople } from "react-icons/io";
 import Card from "../../components/RatingCard/Card";
 import { MEALS } from "@/app/data/meals";
 import { GiChefToque } from "react-icons/gi";
-
+import Modal from "react-modal";
+import {
+  getDoc,
+  doc,
+  getDocs,
+  collection,
+  updateDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { db, storage } from "../../../config";
 const ShowRecipe = ({ params }) => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
+  const [open, setOpen] = useState(false);
+
   const dispatch = useDispatch();
-  // const meal = useSelector((state) => state.meals.meal);
+  const meal = useSelector((state) => state.meals.meal);
   const similarMeals = useSelector((state) => state.meals.mealsByCatData);
   const similalFiveMeals = similarMeals.slice(0, 5);
 
-  const meal = MEALS.find((item) => item.id === params.mealId);
+  // const meal = MEALS.find((item) => item.id === params.mealId);
   useEffect(() => {
-    // dispatch(fetchSingleMeal(params.mealId));
+    dispatch(fetchSingleMeal(params.mealId));
   }, [params.mealId]);
   if (meal.length < 1 || !meal) {
     return;
   } else {
-    // dispatch(fetchMealsByCategory(meal.categoryIds[0]));
+    dispatch(fetchMealsByCategory(meal.categoryIds[0]));
   }
+
+  const updateMeal = async () => {
+    setOpen(true);
+
+    const updatedMealDoc = doc(db, "AllMeals", params.mealId);
+    await updateDoc(updatedMealDoc, {
+      mealRating: rating,
+    });
+
+    setOpen(false);
+  };
   return (
     <div className="flex  items-center justify-center flex-col my-6 w-full">
       <div className="mb-6">
@@ -114,13 +136,15 @@ const ShowRecipe = ({ params }) => {
         {[...Array(5)].map((item, index) => {
           const currentRating = index + 1;
           return (
-            <label>
+            <label key={index}>
               <input
                 className="hidden"
                 type="radio"
                 name="rating"
                 value={currentRating}
-                onClick={() => setRating(currentRating)}
+                onClick={() => {
+                  updateMeal(), setRating(currentRating);
+                }}
               />
               <GiChefToque
                 className="cursor-pointer"
@@ -133,6 +157,32 @@ const ShowRecipe = ({ params }) => {
           );
         })}
       </div>
+      {open && (
+        <Modal
+          isOpen={open}
+          className="p-6 max-w-lg w-[100px] h-[100px] absolute top-56 left-[50%] translate-x-[-50%] bg-white rounded-full shadow-2xl outline-none"
+        >
+          <div className="flex flex-col justify-center pt-4">
+            <span className="text-center text-primary font-bold">
+              شكرا للتقييم
+            </span>
+            <img
+              width={40}
+              height={40}
+              style={{
+                marginLeft: 30,
+                marginTop: 20,
+                borderRadius: 25,
+                backgroundColor: "white",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              src="/check.gif"
+              alt="tanks"
+            />
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

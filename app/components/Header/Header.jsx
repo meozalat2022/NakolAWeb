@@ -6,16 +6,16 @@ const Header = () => {
     <header>
       <div>
         <div className="xl:justify-around justify-center hidden xl:flex items-center">
-          <div>
+          {/* <div>
             <img src="/logo_.png" className="w-40 h-40" alt="logo" />
-          </div>
-          <div>
-            <img
-              src="/banner.png"
-              className="w-40 h-40 hidden xl:block"
-              alt="Banner"
-            />
-          </div>
+          </div> */}
+          {/* <div> */}
+          <img
+            src="/NakolA.png"
+            className="w-full h-40 hidden xl:block"
+            alt="Banner"
+          />
+          {/* </div> */}
         </div>
         <NavBar />
       </div>

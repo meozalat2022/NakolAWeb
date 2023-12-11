@@ -17,18 +17,20 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   // const allMeals = useSelector((state) => state.meals.data);
-  // // const mealData = useSelector((state) => state.meals.meal);
+  // const mealData = useSelector((state) => state.meals.meal);
   // const mealByCatData = useSelector((state) => state.meals.mealsByCatData);
   // const allCateg = useSelector((state) => state.category.data);
   // const latest = useSelector((state) => state.meals.latestMeals);
 
   useEffect(() => {
     setLoading(true);
-    // dispatch(fetchCategories());
-    // dispatch(fetchLatestMeals());
-    // dispatch(fetchHealthyMeals());
+    dispatch(fetchCategories());
+    dispatch(fetchLatestMeals());
+    dispatch(fetchHealthyMeals());
+    dispatch(fetchMeals());
     setLoading(false);
   }, []);
+
   if (loading) {
     return (
       <div className="bg-white w-full h-screen  flex items-center justify-center mt-10">

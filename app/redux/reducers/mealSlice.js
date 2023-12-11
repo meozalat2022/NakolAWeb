@@ -66,7 +66,7 @@ export const fetchMeals = createAsyncThunk("meal/get", async () => {
     sortedMeals.sort(function (a, b) {
       return b.timestamp - a.timestamp;
     });
-    return sortedMeals;
+    return mealsData;
   } catch (error) {
     console.log("error", error);
   }

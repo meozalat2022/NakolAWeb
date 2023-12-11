@@ -3,10 +3,10 @@ import styles from "./Card.module.css";
 import Flag from "react-world-flags";
 import { GiTimeBomb, GiPowerLightning } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
-const MealsListCard = ({ mealsList }) => {
+const MealsListCard = ({ mealsList, key }) => {
   return (
     <>
-      <div className="hidden group gap-1 lg:flex w-[50%] my-4">
+      <div key={key} className="hidden group gap-1 lg:flex w-[50%] my-4">
         <Link
           href={`/showRecipe/${mealsList.id}`}
           // style={{ textDecoration: "none", color: "#4cc9f0" }}

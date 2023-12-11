@@ -17,23 +17,23 @@ const SearchBox = () => {
   const [searchTerm, setSearchTerm] = useState(searchWord);
   const meals = useSelector((state) => state.meals.data);
   useEffect(() => {
-    // dispatch(fetchMeals());
+    dispatch(fetchMeals());
   }, []);
 
-  // if (!meals || meals.length < 1) {
-  //   return (
-  //     <div
-  //       style={{
-  //         display: "flex",
-  //         justifyContent: "center",
-  //         alignItems: "center",
-  //       }}
-  //     >
-  //       <h3>Loading...</h3>
-  //     </div>
-  //   );
-  // }
-  const searchedMeals = MEALS.filter((val) => {
+  if (!meals || meals.length < 1) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h3>Loading...</h3>
+      </div>
+    );
+  }
+  const searchedMeals = meals.filter((val) => {
     if (searchWord == "") {
       return val;
     } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {

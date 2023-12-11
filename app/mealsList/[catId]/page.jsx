@@ -10,14 +10,14 @@ const MealsList = ({ params }) => {
   const dispatch = useDispatch();
   const mealsList = useSelector((state) => state.meals.mealsByCatData);
 
-  // useEffect(() => {
-  //   dispatch(fetchMealsByCategory(params.catId));
-  // }, [params.catId]);
+  useEffect(() => {
+    dispatch(fetchMealsByCategory(params.catId));
+  }, [params.catId]);
 
   return (
     <div className="flex justify-center flex-wrap ">
-      {MEALS.map((item) => (
-        <MealsListCard mealsList={item} />
+      {mealsList.map((item, index) => (
+        <MealsListCard key={index} mealsList={item} />
       ))}
     </div>
   );
