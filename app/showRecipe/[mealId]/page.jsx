@@ -31,15 +31,15 @@ const ShowRecipe = ({ params }) => {
   const dispatch = useDispatch();
   const meal = useSelector((state) => state.meals.meal);
   const similarMeals = useSelector((state) => state.meals.mealsByCatData);
-  // const similalFiveMeals = similarMeals.slice(0, 5);
-
+  const similalFiveMeals = similarMeals.slice(0, 5);
   // const meal = MEALS.find((item) => item.id === params.mealId);
   useEffect(() => {
     dispatch(fetchSingleMeal(params.mealId));
   }, [params.mealId]);
-
   useEffect(() => {
-    if (meal.categoryIds || meal.categoryIds.length > 0) {
+    if (!meal || !meal.categoryIds || meal.categoryIds.length < 1) {
+      return;
+    } else {
       dispatch(fetchMealsByCategory(meal?.categoryIds[0]));
     }
   }, []);
@@ -103,7 +103,7 @@ const ShowRecipe = ({ params }) => {
       </div>
       <div className="w-full flex justify-between">
         <div className="flex w-[20%] ml-4">
-          <Card head={"وجباب مماثلة"} meals={similarMeals} />
+          <Card head={"وجباب مماثلة"} meals={similalFiveMeals} />
         </div>
         <div className="flex flex-col  mr-9">
           <h3 className="flex justify-end my-6">المقادير</h3>

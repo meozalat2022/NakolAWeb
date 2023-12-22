@@ -171,16 +171,25 @@ export const fetchMealsByCategory = createAsyncThunk(
       );
       const querySnapshot = await getDocs(mealsQuery);
       querySnapshot.forEach((doc) => {
-        const { id, imageUrl, title, ingredients, calories, servings, flag } =
-          doc.data();
+        const {
+          imageUrl,
+          title,
+          categoryIds,
+          ingredients,
+          calories,
+          servings,
+          flag,
+        } = doc.data();
+        const id = doc.id;
         mealsList.push({
-          id: doc.id,
+          id: id,
           imageUrl,
           title,
           ingredients,
           calories,
           servings,
           flag,
+          categoryIds,
         });
       });
       // console.log("1111111111111", mealsList);

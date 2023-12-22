@@ -65,7 +65,7 @@ const Card = ({ meals, head }) => {
           <Link
             key={index}
             className="no-underline text-sm text-primary hover:underline hover:border hover:border-double hover:border-accent hover:border-b-4 rounded-md"
-            href={`/showRecipe/${item.id}`}
+            href={`/showRecipe/${item?.id}`}
           >
             <div className="flex m-1 flex-col rounded-md h-full ">
               <div className="flex flex-row">
