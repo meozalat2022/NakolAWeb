@@ -36,9 +36,12 @@ const Healthy = () => {
         })}
       </div>
       <div className="hidden lg:flex justify-end m-1">
-        <button className="cursor-pointer mt-10 bg-primary border border-none py-4 px-8 rounded-lg">
+        <Link
+          href="./healthyMealsList"
+          className="cursor-pointer mt-10 bg-primary border border-none py-4 px-8 rounded-lg"
+        >
           <span className="text-white">المزيد</span>
-        </button>
+        </Link>
       </div>
       <div className="w-full">
         <h4>advertisment</h4>

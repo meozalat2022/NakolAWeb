@@ -3,7 +3,6 @@ import { Providers } from "./redux/provider";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "./globals.css";
-// Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

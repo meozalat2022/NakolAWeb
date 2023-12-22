@@ -1,18 +1,16 @@
 "use client";
 import React, { useEffect } from "react";
-import MealsListCard from "../../components/UI/Card/MealsListCard";
-import styles from "./mealsList.module.css";
+import MealsListCard from "../components/UI/Card/MealsListCard";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchMealsByCategory } from "../../redux/reducers/mealSlice";
-import { MEALS } from "@/app/data/meals";
-const MealsList = ({ params }) => {
+import { fetchHealthyMeals } from "../redux/reducers/mealSlice";
+const HealthyMealsList = () => {
   // const pathname = usePathname();
   const dispatch = useDispatch();
-  const mealsList = useSelector((state) => state.meals.mealsByCatData);
+  const mealsList = useSelector((state) => state.meals.healthyMeals);
 
   useEffect(() => {
-    dispatch(fetchMealsByCategory(params.catId));
-  }, [params.catId]);
+    dispatch(fetchHealthyMeals());
+  }, []);
 
   if (!mealsList || mealsList.length < 1) {
     return (
@@ -31,4 +29,4 @@ const MealsList = ({ params }) => {
   );
 };
 
-export default MealsList;
+export default HealthyMealsList;

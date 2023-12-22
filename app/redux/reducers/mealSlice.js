@@ -9,6 +9,7 @@ import {
   getDoc,
   query,
   where,
+  limit,
 } from "firebase/firestore";
 import { db } from "@/config";
 const initialState = {
@@ -61,6 +62,7 @@ export const fetchMeals = createAsyncThunk("meal/get", async () => {
         imageUrl: mealsData[i].imageUrl,
         id: mealsData[i].id,
         timestamp: mealsData[i].timestamp,
+        mealRating: mealsData[i].mealRating,
       });
     }
     sortedMeals.sort(function (a, b) {
@@ -74,14 +76,15 @@ export const fetchMeals = createAsyncThunk("meal/get", async () => {
 export const fetchLatestMeals = createAsyncThunk("latestMeal/get", async () => {
   try {
     const mealsCollection = collection(db, "Meal");
-    const getMeals = getDocs(mealsCollection);
+    const q = query(mealsCollection, limit(5));
+    const getMeals = getDocs(q);
     const mealsData = (await getMeals).docs.map((item) => {
       const data = item.data();
       data.id = item.id;
       return data;
     });
     const sortedMeals = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i in mealsData) {
       sortedMeals.push({
         servings: mealsData[i].servings,
         calories: mealsData[i].calories,
@@ -91,6 +94,7 @@ export const fetchLatestMeals = createAsyncThunk("latestMeal/get", async () => {
         categoryId: mealsData[i].categoryIds[0],
         timestamp: mealsData[i].timestamp,
         ingredients: mealsData[i].ingredients,
+        mealRating: mealsData[i].mealRating,
       });
     }
     sortedMeals.sort(function (a, b) {
@@ -107,7 +111,8 @@ export const fetchHealthyMeals = createAsyncThunk(
   async () => {
     try {
       const mealsCollection = collection(db, "Meal");
-      const getMeals = getDocs(mealsCollection);
+      const q = query(mealsCollection, limit(40));
+      const getMeals = getDocs(q);
       const mealsData = (await getMeals).docs.map((item) => {
         const data = item.data();
         data.id = item.id;
@@ -124,6 +129,7 @@ export const fetchHealthyMeals = createAsyncThunk(
             timestamp: mealsData[i].timestamp,
             calories: mealsData[i].calories,
             ingredients: mealsData[i].ingredients,
+            mealRating: mealsData[i].mealRating,
           });
           sortedMeals.sort(function (a, b) {
             return a.calories - b.calories;
@@ -160,7 +166,8 @@ export const fetchMealsByCategory = createAsyncThunk(
       const mealsCollection = collection(db, "Meal");
       const mealsQuery = query(
         mealsCollection,
-        where("categoryIds", "array-contains", catId)
+        where("categoryIds", "array-contains", catId),
+        limit(3)
       );
       const querySnapshot = await getDocs(mealsQuery);
       querySnapshot.forEach((doc) => {
@@ -176,6 +183,7 @@ export const fetchMealsByCategory = createAsyncThunk(
           flag,
         });
       });
+      console.log("1111111111111", mealsList);
       return mealsList;
     } catch (error) {
       console.log("error", error);

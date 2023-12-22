@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GiChefToque } from "react-icons/gi";
 
 const HealthyCard = ({ meals, mealRating }) => {
+  const ingArr = meals.ingredients.slice(0, 3);
   const generateRating = (rating) => {
     switch (rating) {
       case 1:
@@ -78,7 +79,7 @@ const HealthyCard = ({ meals, mealRating }) => {
             <div
               className={`${styles.ingredients} flex justify-center items-center text-center px-2 h-28`}
             >
-              <h4>{meals.ingredients}</h4>
+              <h4>{ingArr}</h4>
             </div>
             <span className=" flex justify-center">
               {!mealRating ? generateRating(4) : generateRating(mealRating)}

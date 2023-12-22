@@ -72,7 +72,7 @@ const Slide = ({
     }
   };
   return (
-    <div className=" bg-gray-100 rounded-lg">
+    <div className="mt-6 bg-gray-100 rounded-lg">
       <div className="flex p-4">
         <div className="slider_image bg-white">
           <Image
@@ -84,11 +84,14 @@ const Slide = ({
           ></Image>
         </div>
         <div className="flex-1 flx justify-center ">
-          <h3 className="text-primary mt-5 font-bold text-base text-center">
+          <Link
+            href={`/showRecipe/${id}`}
+            className="flex justify-center items-center text-primary mt-5 font-bold text-base text-center hover:underline hover:text-accent no-underline"
+          >
             {title}
-          </h3>
+          </Link>
           <div className="bg-white mt-6 rounded-md mx-2 flex justify-between px-2 items-center">
-            <Flag code={flag} height="16" fallback={<span>Unknown</span>} />
+            <Flag code={flag} height="16" fallback={<span>{}</span>} />
 
             <div className="flex hover:underline justify-between items-center">
               <h6 className="mr-1">
@@ -122,7 +125,7 @@ const Slide = ({
               {ingredients}
             </h4>
           </div>
-          <div className="flex justify-center ">
+          <div className="flex justify-center cursor-pointer">
             <Link
               className="bg-primary px-6 py-2 rounded-md text-white no-underline hover:bg-accent hover:text-gray-50"
               href={`/showRecipe/${id}`}

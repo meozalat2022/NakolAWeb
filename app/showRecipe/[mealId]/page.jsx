@@ -11,7 +11,7 @@ import Flag from "react-world-flags";
 import { GiTimeBomb, GiPowerLightning } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 import Card from "../../components/RatingCard/Card";
-import { MEALS } from "@/app/data/meals";
+// import { MEALS } from "@/app/data/meals";
 import { GiChefToque } from "react-icons/gi";
 import Modal from "react-modal";
 import {
@@ -31,75 +31,84 @@ const ShowRecipe = ({ params }) => {
   const dispatch = useDispatch();
   const meal = useSelector((state) => state.meals.meal);
   const similarMeals = useSelector((state) => state.meals.mealsByCatData);
-  const similalFiveMeals = similarMeals.slice(0, 5);
+  // const similalFiveMeals = similarMeals.slice(0, 5);
 
   // const meal = MEALS.find((item) => item.id === params.mealId);
   useEffect(() => {
     dispatch(fetchSingleMeal(params.mealId));
   }, [params.mealId]);
-  if (meal.length < 1 || !meal) {
-    return;
-  } else {
-    dispatch(fetchMealsByCategory(meal.categoryIds[0]));
-  }
+
+  useEffect(() => {
+    if (meal.categoryIds || meal.categoryIds.length > 0) {
+      dispatch(fetchMealsByCategory(meal?.categoryIds[0]));
+    }
+  }, []);
 
   const updateMeal = async () => {
     setOpen(true);
 
-    const updatedMealDoc = doc(db, "AllMeals", params.mealId);
+    const updatedMealDoc = doc(db, "Meal", params.mealId);
     await updateDoc(updatedMealDoc, {
       mealRating: rating,
     });
-
     setOpen(false);
   };
+
+  if (!meal) {
+    return (
+      <div className="bg-white w-full h-screen mt-10 flex items-center justify-center">
+        <img className="w-40" src="/loading.gif" alt="loading" />
+      </div>
+    );
+  }
+
   return (
     <div className="flex  items-center justify-center flex-col my-6 w-full">
       <div className="mb-6">
         <h3 className="mt-4 text-primary hover:text-accent hover:underline font-bold">
-          {meal.title}
+          {meal?.title}
         </h3>
       </div>
       <div className="w-1/2 h-1/2 flex justify-center items-center">
         <img
-          className="hover:opacity-80 w-[90%] h-[90%] p-1 rounded-md border border-double border-accent border-b-4"
-          src={meal.imageUrl}
-          alt={meal.title}
+          className="hover:opacity-80 w-[90%] h-[90%] p-1 rounded-md border border-double border-accent border-b-4 max-h-80"
+          src={meal?.imageUrl}
+          alt={meal?.title}
         />
       </div>
       <div className="flex  my-4 p-2 justify-center items-center">
-        <Flag code={meal.flag} height="16" fallback={<span>Unknown</span>} />
+        <Flag code={meal?.flag} height="16" fallback={<span>{}</span>} />
 
         <div className="flex hover:underline justify-between items-center">
           <h6 className={`${styles.durationItem} px-5`}>
             {"السعرات الحرارية : "}
-            {meal.calories}
+            {meal?.calories}
           </h6>
           <GiPowerLightning style={{ color: "#ed6109" }} />
         </div>
         <div className="flex hover:underline justify-between items-center">
           <h6 className={`${styles.durationItem} px-5`}>
             {"الافراد : "}
-            {meal.servings}
+            {meal?.servings}
           </h6>
           <IoIosPeople style={{ color: "#ed6109" }} />
         </div>
         <div className="flex hover:underline justify-between items-center">
           <h6 className={`${styles.durationItem} px-5`}>
             {" وقت الطهي : "}
-            {meal.duration}
+            {meal?.duration}
           </h6>
           <GiTimeBomb style={{ color: "#ed6109" }} />
         </div>
       </div>
       <div className="w-full flex justify-between">
         <div className="flex w-[20%] ml-4">
-          <Card head={"وجباب مماثلة"} meals={MEALS} />
+          <Card head={"وجباب مماثلة"} meals={similarMeals} />
         </div>
         <div className="flex flex-col  mr-9">
           <h3 className="flex justify-end my-6">المقادير</h3>
-          {meal.ingredients &&
-            meal.ingredients.map((item, index) => {
+          {meal?.ingredients &&
+            meal?.ingredients.map((item, index) => {
               return (
                 <ul key={index} className="list-none mb-10">
                   <li className="flex flex-row-reverse">
@@ -116,8 +125,8 @@ const ShowRecipe = ({ params }) => {
       </div>
       <div className="flex flex-col self-end mr-9">
         <h3 className="flex justify-end my-6">الطريقة</h3>
-        {meal.steps &&
-          meal.steps.map((item, index) => {
+        {meal?.steps &&
+          meal?.steps.map((item, index) => {
             return (
               <ul key={index} className="list-none mb-10">
                 <li className="flex flex-row-reverse">
@@ -142,9 +151,7 @@ const ShowRecipe = ({ params }) => {
                 type="radio"
                 name="rating"
                 value={currentRating}
-                onClick={() => {
-                  updateMeal(), setRating(currentRating);
-                }}
+                onClick={updateMeal}
               />
               <GiChefToque
                 className="cursor-pointer"

@@ -16,7 +16,7 @@ import HomePage from "./index/page";
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  // const allMeals = useSelector((state) => state.meals.data);
+  const allMeals = useSelector((state) => state.meals.data);
   // const mealData = useSelector((state) => state.meals.meal);
   // const mealByCatData = useSelector((state) => state.meals.mealsByCatData);
   // const allCateg = useSelector((state) => state.category.data);
@@ -31,9 +31,9 @@ export default function Home() {
     setLoading(false);
   }, []);
 
-  if (loading) {
+  if (loading || allMeals.length < 1) {
     return (
-      <div className="bg-white w-full h-screen  flex items-center justify-center mt-10">
+      <div className="bg-white w-full h-screen mt-10 flex items-center justify-center">
         <img className="w-40" src="/loading.gif" alt="loading" />
       </div>
     );

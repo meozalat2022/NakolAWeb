@@ -4,6 +4,7 @@ import Flag from "react-world-flags";
 import { GiTimeBomb, GiPowerLightning } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 const MealsListCard = ({ mealsList, key }) => {
+  const ingArr = mealsList.ingredients.slice(0, 3);
   return (
     <>
       <div key={key} className="hidden group gap-1 lg:flex w-[50%] my-4">
@@ -12,9 +13,9 @@ const MealsListCard = ({ mealsList, key }) => {
           // style={{ textDecoration: "none", color: "#4cc9f0" }}
           className="no-underline text-accent w-full flex m-1 mx-2 hover:border hover:border-double hover:border-primary hover:border-b-4 border border-double border-accent border-b-4 shadow-lg rounded-lg "
         >
-          <div className="flex w-[30%] ">
+          <div className="flex w-[30%] max-h-40 h-36">
             <img
-              className="group-hover:opacity-80 transition-opacity duration-200  flex w-full  rounded-l-md"
+              className="group-hover:opacity-80 transition-opacity duration-200  flex w-full  rounded-l-md max-h-52 h-full "
               src={mealsList.imageUrl}
               alt={mealsList.title}
             />
@@ -26,14 +27,14 @@ const MealsListCard = ({ mealsList, key }) => {
               </h3>
             </div>
             <div className="flex justify-center text-center">
-              <p className={styles.ingredients}>{mealsList.ingredients}</p>
+              <p className={styles.ingredients}>{ingArr}</p>
             </div>
             <div className="flex w-full items-center justify-center pb-2">
               <div className="flex hover:scale-110 w-full justify-center">
                 <Flag
                   code={mealsList.flag}
                   height="16"
-                  fallback={<span>Unknown</span>}
+                  fallback={<span>{}</span>}
                 />
               </div>
               <div className="flex hover:scale-110 justify-center  w-full">

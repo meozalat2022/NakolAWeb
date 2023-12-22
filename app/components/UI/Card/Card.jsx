@@ -5,11 +5,10 @@ import Link from "next/link";
 import { CATEGORIES } from "../../../data/categories";
 import { GiChefToque } from "react-icons/gi";
 
-const Card = ({ meals, key, catId, mealRating }) => {
+const Card = ({ meals, key, catId }) => {
   const cat = useSelector((state) => state.category.data);
   const catTitle = cat.find((item) => item.id === meals.categoryId);
   const ingredientsArr = meals?.ingredients.slice(0, 2);
-
   const generateRating = (rating) => {
     switch (rating) {
       case 1:
@@ -86,7 +85,7 @@ const Card = ({ meals, key, catId, mealRating }) => {
           {ingredientsArr}...شاهد المزيد
         </h5>
       </div>
-      {!mealRating ? generateRating(4) : generateRating(mealRating)}
+      {!meals.mealRating ? generateRating(4) : generateRating(meals.mealRating)}
       <Link
         className=" w-full h-full flex justify-center items-center no-underline"
         href={`/mealsList/${catTitle && catTitle?.id}`}

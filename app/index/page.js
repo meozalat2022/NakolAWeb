@@ -11,7 +11,7 @@ const HomePage = () => {
         <SearchBar />
       </div>
 
-      <div className="-z-10 w-[950px] max-h-[450px] mb-10">
+      <div className="hidden md:inline-block w-[950px] max-h-[450px] mb-10">
         <h3 className=" flex justify-end bg-blackish">الأعلى تقيماً</h3>
         <MealSlider />
       </div>

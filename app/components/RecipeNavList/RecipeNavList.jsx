@@ -19,7 +19,7 @@ const RecipeNavList = ({ navList }) => {
           );
         })}
       </div>
-      <div className="flex w-[10%]  justify-center">
+      <div className="flex w-[15%] mr-4 justify-center">
         <h5 className="text-base text-primary underline font-bold">
           انواع الوصفات
         </h5>
