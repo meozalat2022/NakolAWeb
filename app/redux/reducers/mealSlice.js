@@ -166,8 +166,8 @@ export const fetchMealsByCategory = createAsyncThunk(
       const mealsCollection = collection(db, "Meal");
       const mealsQuery = query(
         mealsCollection,
-        where("categoryIds", "array-contains", catId),
-        limit(3)
+        where("categoryIds", "array-contains", catId)
+        // limit(3)
       );
       const querySnapshot = await getDocs(mealsQuery);
       querySnapshot.forEach((doc) => {
@@ -183,7 +183,7 @@ export const fetchMealsByCategory = createAsyncThunk(
           flag,
         });
       });
-      console.log("1111111111111", mealsList);
+      // console.log("1111111111111", mealsList);
       return mealsList;
     } catch (error) {
       console.log("error", error);

@@ -12,7 +12,7 @@ import Image from "next/image";
 const SearchBox = () => {
   const searchParams = useSearchParams();
   const searchWord = searchParams.get("search");
-  console.log(searchWord);
+  // console.log(searchWord);
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState(searchWord);
   const meals = useSelector((state) => state.meals.data);
