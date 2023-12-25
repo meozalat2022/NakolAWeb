@@ -44,7 +44,7 @@ const LatestTenMeals = () => {
     <div className="flex flex-wrap justify-center">
       {latestTenMeals.map((item, index) => {
         return (
-          <Fragment key={index}>
+          <Fragment key={item.id}>
             <Card meals={item} key={index} />;
           </Fragment>
         );
