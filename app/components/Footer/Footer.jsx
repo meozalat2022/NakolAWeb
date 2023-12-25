@@ -39,13 +39,13 @@ const Footer = () => {
             <h4>Phone: +201149045481</h4>
           </div>
           {/* contact us */}
-          <div className="flex flex-col ">
+          <div className="flex flex-col items-center">
             <h4 style={{ color: "white" }}>حمل التطبيق واستمتع بكل الوصفات</h4>
             <Link
               target="_blank"
               href="https://play.google.com/store/apps/details?id=com.nakola"
             >
-              <img className={styles.image} src="/playStore.png" alt="" />
+              <img className="w-[250px] h-16" src="/playStore.png" alt="" />
             </Link>
           </div>
           {/* social media */}
