@@ -36,7 +36,7 @@ const LatestTenMeals = () => {
           alignItems: "center",
         }}
       >
-        <h3>Loading...</h3>
+        <h3>Loading....</h3>
       </div>
     );
   }
