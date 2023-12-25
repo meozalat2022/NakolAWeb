@@ -11,6 +11,7 @@ const Header = () => {
           </div> */}
           {/* <div> */}
           <img
+           
             src="/NakolA.png"
             className="w-full h-40 hidden xl:block"
             alt="Banner"

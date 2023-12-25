@@ -7,6 +7,7 @@ import MenueItems from "../MenueItems/MenueItems";
 import styles from "./NavBar.module.css";
 import { AiOutlineMenu, AiOutlineCloseCircle } from "react-icons/ai";
 import SocialMediaIcons from "../SocialMediaIcons/page";
+import Image from "next/image";
 
 const NavBar = () => {
   // const categories = useSelector((state) => state.category.data);
@@ -21,6 +22,7 @@ const NavBar = () => {
       <div className="flex  xl:items-center lg:items-center xl:justify-center font-medium justify-around">
         <div className="z-50  p-5 xl:w-auto w-full xl:hidden flex justify-between">
           <img
+           
             src="/logo_.png"
             alt="logo"
             className="xl:cursor-pointer h-16 pr-40"

@@ -45,13 +45,7 @@ const Footer = () => {
               target="_blank"
               href="https://play.google.com/store/apps/details?id=com.nakola"
             >
-              <Image
-                className={styles.image}
-                width={150}
-                height={75}
-                src="/playStore.png"
-                alt=""
-              />
+              <img className={styles.image} src="/playStore.png" alt="" />
             </Link>
           </div>
           {/* social media */}
