@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CATEGORIES } from "../../../data/categories";
 import { GiChefToque } from "react-icons/gi";
 
-const Card = ({ meals, key, catId }) => {
+const Card = ({ meals }) => {
   const cat = useSelector((state) => state.category.data);
   const catTitle = cat.find((item) => item.id === meals.categoryId);
   const ingredientsArr = meals?.ingredients.slice(0, 2);
@@ -64,10 +64,7 @@ const Card = ({ meals, key, catId }) => {
     }
   };
   return (
-    <div
-      key={key}
-      className="group hover:shadow-2xl w-full shadow-lg rounded-md mt-1 md:w-1/2 lg:w-1/4 xl:w-1/6  px-2 flex flex-col justify-between items-center p-1 mx-1"
-    >
+    <div className="group hover:shadow-2xl w-full shadow-lg rounded-md mt-1 md:w-1/2 lg:w-1/4 xl:w-1/6  px-2 flex flex-col justify-between items-center p-1 mx-1">
       <Link className="w-full h-full " href={`/showRecipe/${meals?.id}`}>
         <h3 className="text-center hover:text-accent overflow-hidden text-primary text-sm">
           {meals?.title}

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchLatestMeals } from "../../redux/reducers/mealSlice";
 import styles from "./LatestTenMeals.module.css";
@@ -43,7 +43,11 @@ const LatestTenMeals = () => {
   return (
     <div className="flex flex-wrap justify-center">
       {latestTenMeals.map((item, index) => {
-        return <Card meals={item} key={index} />;
+        return (
+          <Fragment key={index}>
+            <Card meals={item} key={index} />;
+          </Fragment>
+        );
       })}
     </div>
   );
