@@ -1,10 +1,5 @@
-// "use client";
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import styles from "./Healthy.module.css";
 import Link from "next/link";
-import { CATEGORIES } from "../../data/categories";
-import { MEALS } from "../../data/meals";
 import HealthyCard from "../UI/Card/HealthyCard";
 const Healthy = () => {
   const healthy = useSelector((state) => state.meals.healthyMeals);
