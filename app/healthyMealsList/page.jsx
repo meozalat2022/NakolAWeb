@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import MealsListCard from "../components/UI/Card/MealsListCard";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHealthyMeals } from "../redux/reducers/mealSlice";
@@ -23,7 +23,9 @@ const HealthyMealsList = () => {
   return (
     <div className="flex justify-center flex-wrap ">
       {mealsList.map((item, index) => (
-        <MealsListCard key={index} mealsList={item} />
+        <Fragment key={index}>
+          <MealsListCard key={item.id} mealsList={item} />
+        </Fragment>
       ))}
     </div>
   );
