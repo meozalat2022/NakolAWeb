@@ -64,7 +64,10 @@ const Card = ({ meals, key, catId }) => {
     }
   };
   return (
-    <div className="group hover:shadow-2xl w-full shadow-lg rounded-md mt-1 md:w-1/2 lg:w-1/4 xl:w-1/6  px-2 flex flex-col justify-between items-center p-1 mx-1">
+    <div
+      key={key}
+      className="group hover:shadow-2xl w-full shadow-lg rounded-md mt-1 md:w-1/2 lg:w-1/4 xl:w-1/6  px-2 flex flex-col justify-between items-center p-1 mx-1"
+    >
       <Link className="w-full h-full " href={`/showRecipe/${meals?.id}`}>
         <h3 className="text-center hover:text-accent overflow-hidden text-primary text-sm">
           {meals?.title}
