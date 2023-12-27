@@ -1,10 +1,10 @@
 import LatestTenMeals from "../components/LatestTenMeals/LatestTenMeals";
 import SearchBar from "../components/SearchBar/SearchBar";
-import styles from "./HomePage.module.css";
+import styles from "./Index.module.css";
 import Healthy from "../components/Healthy/Healthy";
 import RatingCard from "../components/RatingCard/RatingCard";
 import MealSlider from "../components/MealSlider/pages";
-const HomePage = () => {
+const Index = () => {
   return (
     <div className=" flex m-auto rounded-md flex-col my-4 items-center">
       <div>
@@ -35,4 +35,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Index;

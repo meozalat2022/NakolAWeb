@@ -11,7 +11,7 @@ import {
   fetchHealthyMeals,
 } from "./redux/reducers/mealSlice";
 import { fetchCategories } from "./redux/reducers/categorySlice";
-import HomePage from "./index/page";
+import Index from "./index/Index";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
@@ -40,7 +40,7 @@ export default function Home() {
   }
   return (
     <main className="w-auto">
-      <HomePage />
+      <Index />
     </main>
   );
 }
