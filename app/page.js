@@ -34,7 +34,7 @@ export default function Home() {
   if (loading || allMeals.length < 1) {
     return (
       <div className="bg-white w-full h-screen mt-10 flex items-center justify-center">
-        <img className="w-40" src="/cooking_spinner.gif" alt="loading" />
+        <img className="w-40" src="/loading.gif" alt="loading" />
       </div>
     );
   }
