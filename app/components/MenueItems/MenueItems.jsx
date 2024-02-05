@@ -67,7 +67,7 @@ const MenueItems = () => {
               </h1>
               {item.subMen && (
                 <div>
-                  <div className=" absolute top-56 hidden group-hover:xl:block hover:xl:block bg-primary">
+                  <div className=" z-50 absolute top-56 hidden group-hover:xl:block hover:xl:block bg-primary">
                     <div>
                       {item.subMenue.map((sub, index) => {
                         return (
