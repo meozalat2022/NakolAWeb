@@ -29,14 +29,8 @@ const LatestTenMeals = () => {
 
   if (!latestTenMeals || latestTenMeals.length < 1) {
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h3>Loading....</h3>
+      <div className="bg-white w-full h-screen mt-10 flex items-center justify-center">
+        <img className="w-40" src="/cooking_spinner.gif" alt="loading" />
       </div>
     );
   }
